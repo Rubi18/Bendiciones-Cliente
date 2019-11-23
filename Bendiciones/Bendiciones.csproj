@@ -1,0 +1,796 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DC94FAF5-19F4-43C8-9539-44151FCBD337}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Bendiciones</RootNamespace>
+    <AssemblyName>Bendiciones</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Correo.cs" />
+    <Compile Include="Encriptar.cs" />
+    <Compile Include="frmAsignarDescuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignarDescuento.Designer.cs">
+      <DependentUpon>frmAsignarDescuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsignarHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsignarHorario.Designer.cs">
+      <DependentUpon>frmAsignarHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarColaborador.Designer.cs">
+      <DependentUpon>frmBuscarColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formateador.cs" />
+    <Compile Include="frmBuscarBebe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarBebe.Designer.cs">
+      <DependentUpon>frmBuscarBebe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarDescuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarDescuento.Designer.cs">
+      <DependentUpon>frmBuscarDescuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarServicioPorCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarServicioPorCliente.Designer.cs">
+      <DependentUpon>frmBuscarServicioPorCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarServicioDeudaPorCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarServicioDeudaPorCliente.Designer.cs">
+      <DependentUpon>frmBuscarServicioDeudaPorCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarBebe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarBebe.Designer.cs">
+      <DependentUpon>frmGestionarBebe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarCondicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarCondicion.Designer.cs">
+      <DependentUpon>frmGestionarCondicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgregarCursoMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarCursoMatricula.Designer.cs">
+      <DependentUpon>frmAgregarCursoMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsistenciaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsistenciaCliente.Designer.cs">
+      <DependentUpon>frmAsistenciaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAsistenciaColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAsistenciaColaborador.Designer.cs">
+      <DependentUpon>frmAsistenciaColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarClaseParticular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarClaseParticular.Designer.cs">
+      <DependentUpon>frmBuscarClaseParticular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarClaseParticularSinDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarClaseParticularSinDocente.Designer.cs">
+      <DependentUpon>frmBuscarClaseParticularSinDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarSede.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarSede.Designer.cs">
+      <DependentUpon>frmBuscarSede.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCuotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCuotas.Designer.cs">
+      <DependentUpon>frmCuotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarDescuento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarDescuento.Designer.cs">
+      <DependentUpon>frmGestionarDescuento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarGestacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarGestacion.Designer.cs">
+      <DependentUpon>frmGestionarGestacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInscribirAHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInscribirAHorario.Designer.cs">
+      <DependentUpon>frmInscribirAHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipalSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipalSec.Designer.cs">
+      <DependentUpon>frmPrincipalSec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MensajeOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MensajeOK.Designer.cs">
+      <DependentUpon>MensajeOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="___frmAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="___frmAsistencia.Designer.cs">
+      <DependentUpon>___frmAsistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estado.cs" />
+    <Compile Include="frmBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarCliente.Designer.cs">
+      <DependentUpon>frmBuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarCondicion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarCondicion.designer.cs">
+      <DependentUpon>frmBuscarCondicion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarCurso.Designer.cs">
+      <DependentUpon>frmBuscarCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscarDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscarDocente.Designer.cs">
+      <DependentUpon>frmBuscarDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarColaboradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarColaboradores.Designer.cs">
+      <DependentUpon>frmGestionarColaboradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarSede.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarSede.Designer.cs">
+      <DependentUpon>frmGestionarSede.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHistoricoCuotasServicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistoricoCuotasServicio.Designer.cs">
+      <DependentUpon>frmHistoricoCuotasServicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarCliente.designer.cs">
+      <DependentUpon>frmGestionarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="___frmInfoCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="___frmInfoCurso.Designer.cs">
+      <DependentUpon>___frmInfoCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMatricula.Designer.cs">
+      <DependentUpon>frmMatricula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMensaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMensaje.Designer.cs">
+      <DependentUpon>frmMensaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarClaseParticular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarClaseParticular.Designer.cs">
+      <DependentUpon>frmGestionarClaseParticular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarCurso.designer.cs">
+      <DependentUpon>frmGestionarCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarHorario.Designer.cs">
+      <DependentUpon>frmGestionarHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerCliente.designer.cs">
+      <DependentUpon>frmVerCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVerCurso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVerCurso.Designer.cs">
+      <DependentUpon>frmVerCurso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Paleta.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAsignarDescuento.resx">
+      <DependentUpon>frmAsignarDescuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsignarHorario.resx">
+      <DependentUpon>frmAsignarHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarColaborador.resx">
+      <DependentUpon>frmBuscarColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarBebe.resx">
+      <DependentUpon>frmBuscarBebe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarDescuento.resx">
+      <DependentUpon>frmBuscarDescuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarServicioPorCliente.resx">
+      <DependentUpon>frmBuscarServicioPorCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarServicioDeudaPorCliente.resx">
+      <DependentUpon>frmBuscarServicioDeudaPorCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarBebe.resx">
+      <DependentUpon>frmGestionarBebe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarCondicion.resx">
+      <DependentUpon>frmGestionarCondicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarCursoMatricula.resx">
+      <DependentUpon>frmAgregarCursoMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsistenciaCliente.resx">
+      <DependentUpon>frmAsistenciaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAsistenciaColaborador.resx">
+      <DependentUpon>frmAsistenciaColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarClaseParticular.resx">
+      <DependentUpon>frmBuscarClaseParticular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarClaseParticularSinDocente.resx">
+      <DependentUpon>frmBuscarClaseParticularSinDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarSede.resx">
+      <DependentUpon>frmBuscarSede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCuotas.resx">
+      <DependentUpon>frmCuotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarDescuento.resx">
+      <DependentUpon>frmGestionarDescuento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarGestacion.resx">
+      <DependentUpon>frmGestionarGestacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInscribirAHorario.resx">
+      <DependentUpon>frmInscribirAHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipalSec.resx">
+      <DependentUpon>frmPrincipalSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MensajeOK.resx">
+      <DependentUpon>MensajeOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="___frmAsistencia.resx">
+      <DependentUpon>___frmAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarCliente.resx">
+      <DependentUpon>frmBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarCondicion.resx">
+      <DependentUpon>frmBuscarCondicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarCurso.resx">
+      <DependentUpon>frmBuscarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscarDocente.resx">
+      <DependentUpon>frmBuscarDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarColaboradores.resx">
+      <DependentUpon>frmGestionarColaboradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarSede.resx">
+      <DependentUpon>frmGestionarSede.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistoricoCuotasServicio.resx">
+      <DependentUpon>frmHistoricoCuotasServicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarCliente.resx">
+      <DependentUpon>frmGestionarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="___frmInfoCurso.resx">
+      <DependentUpon>___frmInfoCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMatricula.resx">
+      <DependentUpon>frmMatricula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMensaje.resx">
+      <DependentUpon>frmMensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarClaseParticular.resx">
+      <DependentUpon>frmGestionarClaseParticular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarCurso.resx">
+      <DependentUpon>frmGestionarCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarHorario.resx">
+      <DependentUpon>frmGestionarHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerCliente.resx">
+      <DependentUpon>frmVerCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVerCurso.resx">
+      <DependentUpon>frmVerCurso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarApoderadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarAsistenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarBebeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarClaseParticularResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarColaboradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarCondicionMedicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarContactoEmergenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarCuotaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarCursoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarDescuentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarGestacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarGestanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarHorarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarMatriculaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarParejaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.actualizarTipoColaboradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.apoderado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.asistencia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.bebe.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.claseParticular.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.colaborador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.condicionMedica.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.contactoEmergencia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.cuota.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.curso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.descuento.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarApoderadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarAsistenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarBebePorApoderadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarBebeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarClaseParticularResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarColaboradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarCondicionMedicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarContactoEmergenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarCuotaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarCursoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarDescuentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarGestacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarGestanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarHorarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarMatriculaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarParejaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.eliminarTipoColaboradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.generarReporteServicioPDFResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.gestacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.gestante.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.horario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarApoderadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarBebeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarClaseParticularResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarColaboradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarCondicionMedicaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarContactoEmergenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarCuotaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarCursoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarDescuentoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarGestacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarGestanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarHorarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarMatriculaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarParejaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarSedeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.insertarTipoColaboradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarApoderadosPorNombreDNIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarAsistenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarBebePorApoderadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarBebePorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarClasesParticularesPorClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarClasesParticularesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarClasesParticularesSinDocentePorApoderadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarClasesParticularesSinDocentePorGestanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarClientesDelDiaPorCursoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarClientesDelDiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarClientesPorHorarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarColaboradoresPorNombreDniResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarCondMedicasPorBebeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarCondMedicasPorGestanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarCondMedicasPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarCondMedicasPorServicioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarContactosporClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarCuotasPorMatriculaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarCursosPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarCursosPosiblesBebeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarDescuentosPorServicioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarDescuentosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarDocentesDelDiaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarDocentesPorNombreDniResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarGestacionPorGestanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarGestantePorNombreDNIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarHorariosPorCursoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarMatriculaActivaPorApoderadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarMatriculaActivaPorGestanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarMatriculaSaldoPorApoderadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarMatriculaSaldoPorGestanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarParejaPorGestanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarSedesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.listarTipoColaboradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.matricula.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.pareja.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.persona.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.registrarClienteEnHorarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.sede.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.tipoColaborador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Bendiciones.Service.verificarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Service\Servicio.wsdl" />
+    <None Include="Connected Services\Service\Servicio.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Service\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

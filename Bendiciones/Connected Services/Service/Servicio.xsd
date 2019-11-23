@@ -1,0 +1,1191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services/" targetNamespace="http://services/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="actualizarApoderado" type="tns:actualizarApoderado" />
+  <xs:element name="actualizarApoderadoResponse" type="tns:actualizarApoderadoResponse" />
+  <xs:element name="actualizarAsistencia" type="tns:actualizarAsistencia" />
+  <xs:element name="actualizarAsistenciaResponse" type="tns:actualizarAsistenciaResponse" />
+  <xs:element name="actualizarBebe" type="tns:actualizarBebe" />
+  <xs:element name="actualizarBebeResponse" type="tns:actualizarBebeResponse" />
+  <xs:element name="actualizarClaseParticular" type="tns:actualizarClaseParticular" />
+  <xs:element name="actualizarClaseParticularResponse" type="tns:actualizarClaseParticularResponse" />
+  <xs:element name="actualizarColaborador" type="tns:actualizarColaborador" />
+  <xs:element name="actualizarColaboradorResponse" type="tns:actualizarColaboradorResponse" />
+  <xs:element name="actualizarCondicionMedica" type="tns:actualizarCondicionMedica" />
+  <xs:element name="actualizarCondicionMedicaResponse" type="tns:actualizarCondicionMedicaResponse" />
+  <xs:element name="actualizarContactoEmergencia" type="tns:actualizarContactoEmergencia" />
+  <xs:element name="actualizarContactoEmergenciaResponse" type="tns:actualizarContactoEmergenciaResponse" />
+  <xs:element name="actualizarCuota" type="tns:actualizarCuota" />
+  <xs:element name="actualizarCuotaResponse" type="tns:actualizarCuotaResponse" />
+  <xs:element name="actualizarCurso" type="tns:actualizarCurso" />
+  <xs:element name="actualizarCursoResponse" type="tns:actualizarCursoResponse" />
+  <xs:element name="actualizarDescuento" type="tns:actualizarDescuento" />
+  <xs:element name="actualizarDescuentoResponse" type="tns:actualizarDescuentoResponse" />
+  <xs:element name="actualizarGestacion" type="tns:actualizarGestacion" />
+  <xs:element name="actualizarGestacionResponse" type="tns:actualizarGestacionResponse" />
+  <xs:element name="actualizarGestante" type="tns:actualizarGestante" />
+  <xs:element name="actualizarGestanteResponse" type="tns:actualizarGestanteResponse" />
+  <xs:element name="actualizarHorario" type="tns:actualizarHorario" />
+  <xs:element name="actualizarHorarioResponse" type="tns:actualizarHorarioResponse" />
+  <xs:element name="actualizarMatricula" type="tns:actualizarMatricula" />
+  <xs:element name="actualizarMatriculaResponse" type="tns:actualizarMatriculaResponse" />
+  <xs:element name="actualizarPareja" type="tns:actualizarPareja" />
+  <xs:element name="actualizarParejaResponse" type="tns:actualizarParejaResponse" />
+  <xs:element name="actualizarSede" type="tns:actualizarSede" />
+  <xs:element name="actualizarSedeResponse" type="tns:actualizarSedeResponse" />
+  <xs:element name="actualizarTipoColaborador" type="tns:actualizarTipoColaborador" />
+  <xs:element name="actualizarTipoColaboradorResponse" type="tns:actualizarTipoColaboradorResponse" />
+  <xs:element name="eliminarApoderado" type="tns:eliminarApoderado" />
+  <xs:element name="eliminarApoderadoResponse" type="tns:eliminarApoderadoResponse" />
+  <xs:element name="eliminarAsistencia" type="tns:eliminarAsistencia" />
+  <xs:element name="eliminarAsistenciaResponse" type="tns:eliminarAsistenciaResponse" />
+  <xs:element name="eliminarBebe" type="tns:eliminarBebe" />
+  <xs:element name="eliminarBebePorApoderado" type="tns:eliminarBebePorApoderado" />
+  <xs:element name="eliminarBebePorApoderadoResponse" type="tns:eliminarBebePorApoderadoResponse" />
+  <xs:element name="eliminarBebeResponse" type="tns:eliminarBebeResponse" />
+  <xs:element name="eliminarClaseParticular" type="tns:eliminarClaseParticular" />
+  <xs:element name="eliminarClaseParticularResponse" type="tns:eliminarClaseParticularResponse" />
+  <xs:element name="eliminarColaborador" type="tns:eliminarColaborador" />
+  <xs:element name="eliminarColaboradorResponse" type="tns:eliminarColaboradorResponse" />
+  <xs:element name="eliminarCondicionMedica" type="tns:eliminarCondicionMedica" />
+  <xs:element name="eliminarCondicionMedicaResponse" type="tns:eliminarCondicionMedicaResponse" />
+  <xs:element name="eliminarContactoEmergencia" type="tns:eliminarContactoEmergencia" />
+  <xs:element name="eliminarContactoEmergenciaResponse" type="tns:eliminarContactoEmergenciaResponse" />
+  <xs:element name="eliminarCuota" type="tns:eliminarCuota" />
+  <xs:element name="eliminarCuotaResponse" type="tns:eliminarCuotaResponse" />
+  <xs:element name="eliminarCurso" type="tns:eliminarCurso" />
+  <xs:element name="eliminarCursoResponse" type="tns:eliminarCursoResponse" />
+  <xs:element name="eliminarDescuento" type="tns:eliminarDescuento" />
+  <xs:element name="eliminarDescuentoResponse" type="tns:eliminarDescuentoResponse" />
+  <xs:element name="eliminarGestacion" type="tns:eliminarGestacion" />
+  <xs:element name="eliminarGestacionResponse" type="tns:eliminarGestacionResponse" />
+  <xs:element name="eliminarGestante" type="tns:eliminarGestante" />
+  <xs:element name="eliminarGestanteResponse" type="tns:eliminarGestanteResponse" />
+  <xs:element name="eliminarHorario" type="tns:eliminarHorario" />
+  <xs:element name="eliminarHorarioResponse" type="tns:eliminarHorarioResponse" />
+  <xs:element name="eliminarMatricula" type="tns:eliminarMatricula" />
+  <xs:element name="eliminarMatriculaResponse" type="tns:eliminarMatriculaResponse" />
+  <xs:element name="eliminarPareja" type="tns:eliminarPareja" />
+  <xs:element name="eliminarParejaResponse" type="tns:eliminarParejaResponse" />
+  <xs:element name="eliminarSede" type="tns:eliminarSede" />
+  <xs:element name="eliminarSedeResponse" type="tns:eliminarSedeResponse" />
+  <xs:element name="eliminarTipoColaborador" type="tns:eliminarTipoColaborador" />
+  <xs:element name="eliminarTipoColaboradorResponse" type="tns:eliminarTipoColaboradorResponse" />
+  <xs:element name="generarReporteServicioPDF" type="tns:generarReporteServicioPDF" />
+  <xs:element name="generarReporteServicioPDFResponse" type="tns:generarReporteServicioPDFResponse" />
+  <xs:element name="insertarApoderado" type="tns:insertarApoderado" />
+  <xs:element name="insertarApoderadoResponse" type="tns:insertarApoderadoResponse" />
+  <xs:element name="insertarBebe" type="tns:insertarBebe" />
+  <xs:element name="insertarBebeResponse" type="tns:insertarBebeResponse" />
+  <xs:element name="insertarClaseParticular" type="tns:insertarClaseParticular" />
+  <xs:element name="insertarClaseParticularResponse" type="tns:insertarClaseParticularResponse" />
+  <xs:element name="insertarColaborador" type="tns:insertarColaborador" />
+  <xs:element name="insertarColaboradorResponse" type="tns:insertarColaboradorResponse" />
+  <xs:element name="insertarCondicionMedica" type="tns:insertarCondicionMedica" />
+  <xs:element name="insertarCondicionMedicaResponse" type="tns:insertarCondicionMedicaResponse" />
+  <xs:element name="insertarContactoEmergencia" type="tns:insertarContactoEmergencia" />
+  <xs:element name="insertarContactoEmergenciaResponse" type="tns:insertarContactoEmergenciaResponse" />
+  <xs:element name="insertarCuota" type="tns:insertarCuota" />
+  <xs:element name="insertarCuotaResponse" type="tns:insertarCuotaResponse" />
+  <xs:element name="insertarCurso" type="tns:insertarCurso" />
+  <xs:element name="insertarCursoResponse" type="tns:insertarCursoResponse" />
+  <xs:element name="insertarDescuento" type="tns:insertarDescuento" />
+  <xs:element name="insertarDescuentoResponse" type="tns:insertarDescuentoResponse" />
+  <xs:element name="insertarGestacion" type="tns:insertarGestacion" />
+  <xs:element name="insertarGestacionResponse" type="tns:insertarGestacionResponse" />
+  <xs:element name="insertarGestante" type="tns:insertarGestante" />
+  <xs:element name="insertarGestanteResponse" type="tns:insertarGestanteResponse" />
+  <xs:element name="insertarHorario" type="tns:insertarHorario" />
+  <xs:element name="insertarHorarioResponse" type="tns:insertarHorarioResponse" />
+  <xs:element name="insertarMatricula" type="tns:insertarMatricula" />
+  <xs:element name="insertarMatriculaResponse" type="tns:insertarMatriculaResponse" />
+  <xs:element name="insertarPareja" type="tns:insertarPareja" />
+  <xs:element name="insertarParejaResponse" type="tns:insertarParejaResponse" />
+  <xs:element name="insertarSede" type="tns:insertarSede" />
+  <xs:element name="insertarSedeResponse" type="tns:insertarSedeResponse" />
+  <xs:element name="insertarTipoColaborador" type="tns:insertarTipoColaborador" />
+  <xs:element name="insertarTipoColaboradorResponse" type="tns:insertarTipoColaboradorResponse" />
+  <xs:element name="listarApoderadosPorNombreDNI" type="tns:listarApoderadosPorNombreDNI" />
+  <xs:element name="listarApoderadosPorNombreDNIResponse" type="tns:listarApoderadosPorNombreDNIResponse" />
+  <xs:element name="listarAsistencia" type="tns:listarAsistencia" />
+  <xs:element name="listarAsistenciaResponse" type="tns:listarAsistenciaResponse" />
+  <xs:element name="listarBebePorApoderado" type="tns:listarBebePorApoderado" />
+  <xs:element name="listarBebePorApoderadoResponse" type="tns:listarBebePorApoderadoResponse" />
+  <xs:element name="listarBebePorNombre" type="tns:listarBebePorNombre" />
+  <xs:element name="listarBebePorNombreResponse" type="tns:listarBebePorNombreResponse" />
+  <xs:element name="listarClasesParticulares" type="tns:listarClasesParticulares" />
+  <xs:element name="listarClasesParticularesPorCliente" type="tns:listarClasesParticularesPorCliente" />
+  <xs:element name="listarClasesParticularesPorClienteResponse" type="tns:listarClasesParticularesPorClienteResponse" />
+  <xs:element name="listarClasesParticularesResponse" type="tns:listarClasesParticularesResponse" />
+  <xs:element name="listarClasesParticularesSinDocentePorApoderado" type="tns:listarClasesParticularesSinDocentePorApoderado" />
+  <xs:element name="listarClasesParticularesSinDocentePorApoderadoResponse" type="tns:listarClasesParticularesSinDocentePorApoderadoResponse" />
+  <xs:element name="listarClasesParticularesSinDocentePorGestante" type="tns:listarClasesParticularesSinDocentePorGestante" />
+  <xs:element name="listarClasesParticularesSinDocentePorGestanteResponse" type="tns:listarClasesParticularesSinDocentePorGestanteResponse" />
+  <xs:element name="listarClientesDelDia" type="tns:listarClientesDelDia" />
+  <xs:element name="listarClientesDelDiaPorCurso" type="tns:listarClientesDelDiaPorCurso" />
+  <xs:element name="listarClientesDelDiaPorCursoResponse" type="tns:listarClientesDelDiaPorCursoResponse" />
+  <xs:element name="listarClientesDelDiaResponse" type="tns:listarClientesDelDiaResponse" />
+  <xs:element name="listarClientesPorHorario" type="tns:listarClientesPorHorario" />
+  <xs:element name="listarClientesPorHorarioResponse" type="tns:listarClientesPorHorarioResponse" />
+  <xs:element name="listarColaboradoresPorNombreDni" type="tns:listarColaboradoresPorNombreDni" />
+  <xs:element name="listarColaboradoresPorNombreDniResponse" type="tns:listarColaboradoresPorNombreDniResponse" />
+  <xs:element name="listarCondMedicasPorBebe" type="tns:listarCondMedicasPorBebe" />
+  <xs:element name="listarCondMedicasPorBebeResponse" type="tns:listarCondMedicasPorBebeResponse" />
+  <xs:element name="listarCondMedicasPorGestante" type="tns:listarCondMedicasPorGestante" />
+  <xs:element name="listarCondMedicasPorGestanteResponse" type="tns:listarCondMedicasPorGestanteResponse" />
+  <xs:element name="listarCondMedicasPorNombre" type="tns:listarCondMedicasPorNombre" />
+  <xs:element name="listarCondMedicasPorNombreResponse" type="tns:listarCondMedicasPorNombreResponse" />
+  <xs:element name="listarCondMedicasPorServicio" type="tns:listarCondMedicasPorServicio" />
+  <xs:element name="listarCondMedicasPorServicioResponse" type="tns:listarCondMedicasPorServicioResponse" />
+  <xs:element name="listarContactosporCliente" type="tns:listarContactosporCliente" />
+  <xs:element name="listarContactosporClienteResponse" type="tns:listarContactosporClienteResponse" />
+  <xs:element name="listarCuotasPorMatricula" type="tns:listarCuotasPorMatricula" />
+  <xs:element name="listarCuotasPorMatriculaResponse" type="tns:listarCuotasPorMatriculaResponse" />
+  <xs:element name="listarCursosPorNombre" type="tns:listarCursosPorNombre" />
+  <xs:element name="listarCursosPorNombreResponse" type="tns:listarCursosPorNombreResponse" />
+  <xs:element name="listarCursosPosiblesBebe" type="tns:listarCursosPosiblesBebe" />
+  <xs:element name="listarCursosPosiblesBebeResponse" type="tns:listarCursosPosiblesBebeResponse" />
+  <xs:element name="listarDescuentos" type="tns:listarDescuentos" />
+  <xs:element name="listarDescuentosPorServicio" type="tns:listarDescuentosPorServicio" />
+  <xs:element name="listarDescuentosPorServicioResponse" type="tns:listarDescuentosPorServicioResponse" />
+  <xs:element name="listarDescuentosResponse" type="tns:listarDescuentosResponse" />
+  <xs:element name="listarDocentesDelDia" type="tns:listarDocentesDelDia" />
+  <xs:element name="listarDocentesDelDiaResponse" type="tns:listarDocentesDelDiaResponse" />
+  <xs:element name="listarDocentesPorNombreDni" type="tns:listarDocentesPorNombreDni" />
+  <xs:element name="listarDocentesPorNombreDniResponse" type="tns:listarDocentesPorNombreDniResponse" />
+  <xs:element name="listarGestacionPorGestante" type="tns:listarGestacionPorGestante" />
+  <xs:element name="listarGestacionPorGestanteResponse" type="tns:listarGestacionPorGestanteResponse" />
+  <xs:element name="listarGestantePorNombreDNI" type="tns:listarGestantePorNombreDNI" />
+  <xs:element name="listarGestantePorNombreDNIResponse" type="tns:listarGestantePorNombreDNIResponse" />
+  <xs:element name="listarHorariosPorCurso" type="tns:listarHorariosPorCurso" />
+  <xs:element name="listarHorariosPorCursoResponse" type="tns:listarHorariosPorCursoResponse" />
+  <xs:element name="listarMatriculaActivaPorApoderado" type="tns:listarMatriculaActivaPorApoderado" />
+  <xs:element name="listarMatriculaActivaPorApoderadoResponse" type="tns:listarMatriculaActivaPorApoderadoResponse" />
+  <xs:element name="listarMatriculaActivaPorGestante" type="tns:listarMatriculaActivaPorGestante" />
+  <xs:element name="listarMatriculaActivaPorGestanteResponse" type="tns:listarMatriculaActivaPorGestanteResponse" />
+  <xs:element name="listarMatriculaSaldoPorApoderado" type="tns:listarMatriculaSaldoPorApoderado" />
+  <xs:element name="listarMatriculaSaldoPorApoderadoResponse" type="tns:listarMatriculaSaldoPorApoderadoResponse" />
+  <xs:element name="listarMatriculaSaldoPorGestante" type="tns:listarMatriculaSaldoPorGestante" />
+  <xs:element name="listarMatriculaSaldoPorGestanteResponse" type="tns:listarMatriculaSaldoPorGestanteResponse" />
+  <xs:element name="listarParejaPorGestante" type="tns:listarParejaPorGestante" />
+  <xs:element name="listarParejaPorGestanteResponse" type="tns:listarParejaPorGestanteResponse" />
+  <xs:element name="listarSedes" type="tns:listarSedes" />
+  <xs:element name="listarSedesResponse" type="tns:listarSedesResponse" />
+  <xs:element name="listarTipoColaborador" type="tns:listarTipoColaborador" />
+  <xs:element name="listarTipoColaboradorResponse" type="tns:listarTipoColaboradorResponse" />
+  <xs:element name="registrarClienteEnHorario" type="tns:registrarClienteEnHorario" />
+  <xs:element name="registrarClienteEnHorarioResponse" type="tns:registrarClienteEnHorarioResponse" />
+  <xs:element name="verificarUsuario" type="tns:verificarUsuario" />
+  <xs:element name="verificarUsuarioResponse" type="tns:verificarUsuarioResponse" />
+  <xs:complexType name="listarCondMedicasPorGestante">
+    <xs:sequence>
+      <xs:element name="idGestante" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCondMedicasPorGestanteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:condicionMedica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="condicionMedica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="id_cond" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDocentesDelDia">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarDocentesDelDiaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:curso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="curso">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:servicio">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="horario" nillable="true" type="tns:horario" />
+          <xs:element name="numClases" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="servicio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="condMedicas" nillable="true" type="tns:condicionMedica" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="desAplicables" nillable="true" type="tns:descuento" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="id_servicio" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="precio" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="horario">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="clase" type="xs:int" />
+      <xs:element minOccurs="0" name="colaborador" type="tns:colaborador" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="horaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="horaIni" type="xs:dateTime" />
+      <xs:element name="idHorario" type="xs:int" />
+      <xs:element name="numVacantes" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="participantes" nillable="true" type="tns:persona" />
+      <xs:element minOccurs="0" name="sede" type="tns:sede" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="colaborador">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="direccion" type="xs:string" />
+          <xs:element minOccurs="0" name="fechaNaci" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="horaBloqueo" type="xs:dateTime" />
+          <xs:element name="intentos" type="xs:int" />
+          <xs:element minOccurs="0" name="numColegiatura" type="xs:string" />
+          <xs:element minOccurs="0" name="password" type="xs:string" />
+          <xs:element minOccurs="0" name="profesion" type="xs:string" />
+          <xs:element minOccurs="0" name="referencia" type="xs:string" />
+          <xs:element minOccurs="0" name="tipo" type="tns:tipoColaborador" />
+          <xs:element minOccurs="0" name="user" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="sexo" type="xs:unsignedShort" />
+      <xs:element minOccurs="0" name="telefono" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tipoColaborador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idTipoColab" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sede">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" name="distrito" type="xs:string" />
+      <xs:element name="idSede" type="xs:int" />
+      <xs:element minOccurs="0" name="telefono" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="descuento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idDescuento" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="porcentaje" type="xs:float" />
+      <xs:element name="tipo" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarGestantePorNombreDNI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="criterio" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarGestantePorNombreDNIResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:gestante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gestante">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:cliente">
+        <xs:sequence>
+          <xs:element name="cantEmbar" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="condMedicas" nillable="true" type="tns:condicionMedica" />
+          <xs:element minOccurs="0" name="fechaNaci" type="xs:dateTime" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="gestaciones" nillable="true" type="tns:gestacion" />
+          <xs:element name="numPartos" type="xs:int" />
+          <xs:element minOccurs="0" name="observMedicas" type="xs:string" />
+          <xs:element minOccurs="0" name="pareja" type="tns:pareja" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="cliente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="aseguradora" type="xs:string" />
+          <xs:element minOccurs="0" name="codigo" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="contactos" nillable="true" type="tns:contactoEmergencia" />
+          <xs:element minOccurs="0" name="numSeguro" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="gestacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="clinica" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha_probable_parto" type="xs:dateTime" />
+      <xs:element name="idGestacion" type="xs:int" />
+      <xs:element minOccurs="0" name="medico" type="xs:string" />
+      <xs:element name="numEmbar" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pareja">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element name="idPareja" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="sexo" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="contactoEmergencia">
+    <xs:sequence>
+      <xs:element name="idContacto" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarCurso">
+    <xs:sequence>
+      <xs:element name="idCurso" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarCursoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="generarReporteServicioPDF">
+    <xs:sequence>
+      <xs:element name="mes" type="xs:int" />
+      <xs:element name="anho" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generarReporteServicioPDFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarTipoColaborador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="idTipoColab" type="tns:tipoColaborador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarTipoColaboradorResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarClasesParticularesSinDocentePorGestante">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarClasesParticularesSinDocentePorGestanteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:matricula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="matricula">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="bebe" type="tns:bebe" />
+      <xs:element minOccurs="0" name="cliente" type="tns:cliente" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="cuotas" nillable="true" type="tns:cuota" />
+      <xs:element minOccurs="0" name="descuento" type="tns:descuento" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element name="idMatricula" type="xs:int" />
+      <xs:element name="monto" type="xs:float" />
+      <xs:element name="saldo" type="xs:float" />
+      <xs:element minOccurs="0" name="servicio" type="tns:servicio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="bebe">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="condMedicas" nillable="true" type="tns:condicionMedica" />
+          <xs:element minOccurs="0" name="fechaNaci" type="xs:dateTime" />
+          <xs:element name="numHerman" type="xs:int" />
+          <xs:element minOccurs="0" name="observMedicas" type="xs:string" />
+          <xs:element minOccurs="0" name="relacion" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="cuota">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="formaPago" type="xs:string" />
+      <xs:element name="idCuota" type="xs:int" />
+      <xs:element name="monto" type="xs:float" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registrarClienteEnHorario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="aistencia" type="tns:asistencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="asistencia">
+    <xs:sequence>
+      <xs:element name="asistio" type="xs:boolean" />
+      <xs:element minOccurs="0" name="horario" type="tns:horario" />
+      <xs:element name="idAsistencia" type="xs:int" />
+      <xs:element minOccurs="0" name="persona" type="tns:persona" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="registrarClienteEnHorarioResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="insertarDescuento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descuento" type="tns:descuento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarDescuentoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarHorariosPorCurso">
+    <xs:sequence>
+      <xs:element name="idCurso" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarHorariosPorCursoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:horario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarColaborador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="colaborador" type="tns:colaborador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarColaboradorResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDescuentosPorServicio">
+    <xs:sequence>
+      <xs:element name="idServicio" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDescuentosPorServicioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:descuento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCondMedicasPorBebe">
+    <xs:sequence>
+      <xs:element name="idBebe" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCondMedicasPorBebeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:condicionMedica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarSede">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sede" type="tns:sede" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarSedeResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="actualizarContactoEmergencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contacto" type="tns:contactoEmergencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarContactoEmergenciaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="eliminarColaborador">
+    <xs:sequence>
+      <xs:element name="idColaborador" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarColaboradorResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="actualizarHorario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="horario" type="tns:horario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarHorarioResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarCursosPosiblesBebe">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bebe" type="tns:bebe" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCursosPosiblesBebeResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:curso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarGestacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gestacion" type="tns:gestacion" />
+      <xs:element name="idGestante" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarGestacionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarGestante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gestante" type="tns:gestante" />
+      <xs:element minOccurs="0" name="sede" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarGestanteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarTipoColaborador">
+    <xs:sequence>
+      <xs:element name="idTipoColab" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarTipoColaboradorResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="eliminarPareja">
+    <xs:sequence>
+      <xs:element name="idPareja" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarParejaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="actualizarCondicionMedica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cond" type="tns:condicionMedica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarCondicionMedicaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarClientesDelDiaPorCurso">
+    <xs:sequence>
+      <xs:element name="idCurso" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarClientesDelDiaPorCursoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:curso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarBebePorApoderado">
+    <xs:sequence>
+      <xs:element name="idApoderado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarBebePorApoderadoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="actualizarMatricula">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="matricula" type="tns:matricula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarMatriculaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="insertarCurso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="curso" type="tns:curso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCursoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarCurso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="curso" type="tns:curso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarCursoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarColaboradoresPorNombreDni">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="criterio" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarColaboradoresPorNombreDniResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:colaborador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCondMedicasPorServicio">
+    <xs:sequence>
+      <xs:element name="idServicio" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCondMedicasPorServicioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:condicionMedica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCursosPorNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCursosPorNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:curso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarCuota">
+    <xs:sequence>
+      <xs:element name="idCuota" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarCuotaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="actualizarBebe">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bebe" type="tns:bebe" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarBebeResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarDocentesPorNombreDni">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="criterio" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarDocentesPorNombreDniResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:colaborador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarApoderado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apoderado" type="tns:apoderado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="apoderado">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:cliente">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="bebes" nillable="true" type="tns:bebe" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="actualizarApoderadoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="actualizarClaseParticular">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="claseParticular" type="tns:claseParticular" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="claseParticular">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:servicio">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="colaborador" type="tns:colaborador" />
+          <xs:element minOccurs="0" name="direccion" type="xs:string" />
+          <xs:element minOccurs="0" name="distrito" type="xs:string" />
+          <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="horaFin" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="horaIni" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="observaciones" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="actualizarClaseParticularResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="eliminarClaseParticular">
+    <xs:sequence>
+      <xs:element name="idclaseParticular" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarClaseParticularResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="eliminarMatricula">
+    <xs:sequence>
+      <xs:element name="idMatricula" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMatriculaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="eliminarApoderado">
+    <xs:sequence>
+      <xs:element name="idapoderado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarApoderadoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarDescuentos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarDescuentosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:descuento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarClaseParticular">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="claseParticular" type="tns:claseParticular" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarClaseParticularResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarClasesParticulares">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarClasesParticularesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:claseParticular" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarContactoEmergencia">
+    <xs:sequence>
+      <xs:element name="idContacto" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarContactoEmergenciaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="insertarTipoColaborador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipo" type="tns:tipoColaborador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarTipoColaboradorResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarTipoColaborador">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarTipoColaboradorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tipoColaborador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarHorario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="horario" type="tns:horario" />
+      <xs:element name="idCurso" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarHorarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCondicionMedica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cond" type="tns:condicionMedica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCondicionMedicaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarApoderadosPorNombreDNI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="criterio" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarApoderadosPorNombreDNIResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:apoderado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarGestante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gestante" type="tns:gestante" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarGestanteResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarCuotasPorMatricula">
+    <xs:sequence>
+      <xs:element name="idMatricula" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCuotasPorMatriculaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:cuota" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarDescuento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descuento" type="tns:descuento" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarDescuentoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="eliminarBebe">
+    <xs:sequence>
+      <xs:element name="idbebe" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarBebeResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="insertarPareja">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pareja" type="tns:pareja" />
+      <xs:element name="idGestante" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarParejaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMatriculaActivaPorGestante">
+    <xs:sequence>
+      <xs:element name="idGestante" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMatriculaActivaPorGestanteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:matricula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarCondicionMedica">
+    <xs:sequence>
+      <xs:element name="idCond" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarCondicionMedicaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarMatriculaSaldoPorGestante">
+    <xs:sequence>
+      <xs:element name="idGestante" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMatriculaSaldoPorGestanteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:matricula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarClientesPorHorario">
+    <xs:sequence>
+      <xs:element name="idHorario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarClientesPorHorarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:persona" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarSede">
+    <xs:sequence>
+      <xs:element name="idSede" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarSedeResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="eliminarGestacion">
+    <xs:sequence>
+      <xs:element name="idGestacion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarGestacionResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarBebePorNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarBebePorNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:bebe" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarAsistencia">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarAsistenciaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:asistencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarPareja">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pareja" type="tns:pareja" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarParejaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarBebePorApoderado">
+    <xs:sequence>
+      <xs:element name="idApoderado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarBebePorApoderadoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:bebe" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarAsistencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="asistencia" type="tns:asistencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarAsistenciaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="actualizarAsistencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="asistencia" type="tns:asistencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarAsistenciaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="actualizarColaborador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="colaborador" type="tns:colaborador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarColaboradorResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarClientesDelDia">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarClientesDelDiaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:curso" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarGestacionPorGestante">
+    <xs:sequence>
+      <xs:element name="idGestante" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarGestacionPorGestanteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:gestacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarSedes">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarSedesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:sede" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCuota">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cuota" type="tns:cuota" />
+      <xs:element name="idMatricula" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarCuotaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarClasesParticularesPorCliente">
+    <xs:sequence>
+      <xs:element name="idCliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarClasesParticularesPorClienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:claseParticular" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarClasesParticularesSinDocentePorApoderado">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarClasesParticularesSinDocentePorApoderadoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:matricula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCondMedicasPorNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarCondMedicasPorNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:condicionMedica" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarContactoEmergencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contacto" type="tns:contactoEmergencia" />
+      <xs:element name="idCliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarContactoEmergenciaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarDescuento">
+    <xs:sequence>
+      <xs:element name="idDescuento" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarDescuentoResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="verificarUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:colaborador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarApoderado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apoderado" type="tns:apoderado" />
+      <xs:element minOccurs="0" name="sede" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarApoderadoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarMatricula">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="matricula" type="tns:matricula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarMatriculaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarContactosporCliente">
+    <xs:sequence>
+      <xs:element name="idCliente" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarContactosporClienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:contactoEmergencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMatriculaSaldoPorApoderado">
+    <xs:sequence>
+      <xs:element name="idApoderado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMatriculaSaldoPorApoderadoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:matricula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarGestante">
+    <xs:sequence>
+      <xs:element name="idGestante" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarGestanteResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="actualizarGestacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gestacion" type="tns:gestacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarGestacionResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarParejaPorGestante">
+    <xs:sequence>
+      <xs:element name="idGestante" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarParejaPorGestanteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pareja" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMatriculaActivaPorApoderado">
+    <xs:sequence>
+      <xs:element name="idApoderado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMatriculaActivaPorApoderadoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:matricula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarHorario">
+    <xs:sequence>
+      <xs:element name="idHorario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarHorarioResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="actualizarCuota">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cuota" type="tns:cuota" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarCuotaResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="insertarBebe">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="bebe" type="tns:bebe" />
+      <xs:element name="apode" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarBebeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarSede">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="sede" type="tns:sede" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarSedeResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

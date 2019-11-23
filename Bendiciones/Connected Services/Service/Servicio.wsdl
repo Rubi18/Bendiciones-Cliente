@@ -1,0 +1,1690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="Servicio" targetNamespace="http://services/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://23.22.34.143:8080/BendicionesSoftServices/Servicio?xsd=1" namespace="http://services/" />
+    </xsd:schema>
+  </types>
+  <message name="listarCondMedicasPorBebe">
+    <part name="parameters" element="tns:listarCondMedicasPorBebe" />
+  </message>
+  <message name="listarCondMedicasPorBebeResponse">
+    <part name="parameters" element="tns:listarCondMedicasPorBebeResponse" />
+  </message>
+  <message name="eliminarContactoEmergencia">
+    <part name="parameters" element="tns:eliminarContactoEmergencia" />
+  </message>
+  <message name="eliminarContactoEmergenciaResponse">
+    <part name="parameters" element="tns:eliminarContactoEmergenciaResponse" />
+  </message>
+  <message name="eliminarAsistencia">
+    <part name="parameters" element="tns:eliminarAsistencia" />
+  </message>
+  <message name="eliminarAsistenciaResponse">
+    <part name="parameters" element="tns:eliminarAsistenciaResponse" />
+  </message>
+  <message name="listarDocentesPorNombreDni">
+    <part name="parameters" element="tns:listarDocentesPorNombreDni" />
+  </message>
+  <message name="listarDocentesPorNombreDniResponse">
+    <part name="parameters" element="tns:listarDocentesPorNombreDniResponse" />
+  </message>
+  <message name="insertarApoderado">
+    <part name="parameters" element="tns:insertarApoderado" />
+  </message>
+  <message name="insertarApoderadoResponse">
+    <part name="parameters" element="tns:insertarApoderadoResponse" />
+  </message>
+  <message name="listarApoderadosPorNombreDNI">
+    <part name="parameters" element="tns:listarApoderadosPorNombreDNI" />
+  </message>
+  <message name="listarApoderadosPorNombreDNIResponse">
+    <part name="parameters" element="tns:listarApoderadosPorNombreDNIResponse" />
+  </message>
+  <message name="insertarColaborador">
+    <part name="parameters" element="tns:insertarColaborador" />
+  </message>
+  <message name="insertarColaboradorResponse">
+    <part name="parameters" element="tns:insertarColaboradorResponse" />
+  </message>
+  <message name="actualizarAsistencia">
+    <part name="parameters" element="tns:actualizarAsistencia" />
+  </message>
+  <message name="actualizarAsistenciaResponse">
+    <part name="parameters" element="tns:actualizarAsistenciaResponse" />
+  </message>
+  <message name="listarColaboradoresPorNombreDni">
+    <part name="parameters" element="tns:listarColaboradoresPorNombreDni" />
+  </message>
+  <message name="listarColaboradoresPorNombreDniResponse">
+    <part name="parameters" element="tns:listarColaboradoresPorNombreDniResponse" />
+  </message>
+  <message name="eliminarColaborador">
+    <part name="parameters" element="tns:eliminarColaborador" />
+  </message>
+  <message name="eliminarColaboradorResponse">
+    <part name="parameters" element="tns:eliminarColaboradorResponse" />
+  </message>
+  <message name="listarBebePorNombre">
+    <part name="parameters" element="tns:listarBebePorNombre" />
+  </message>
+  <message name="listarBebePorNombreResponse">
+    <part name="parameters" element="tns:listarBebePorNombreResponse" />
+  </message>
+  <message name="listarCondMedicasPorServicio">
+    <part name="parameters" element="tns:listarCondMedicasPorServicio" />
+  </message>
+  <message name="listarCondMedicasPorServicioResponse">
+    <part name="parameters" element="tns:listarCondMedicasPorServicioResponse" />
+  </message>
+  <message name="listarClientesDelDiaPorCurso">
+    <part name="parameters" element="tns:listarClientesDelDiaPorCurso" />
+  </message>
+  <message name="listarClientesDelDiaPorCursoResponse">
+    <part name="parameters" element="tns:listarClientesDelDiaPorCursoResponse" />
+  </message>
+  <message name="eliminarClaseParticular">
+    <part name="parameters" element="tns:eliminarClaseParticular" />
+  </message>
+  <message name="eliminarClaseParticularResponse">
+    <part name="parameters" element="tns:eliminarClaseParticularResponse" />
+  </message>
+  <message name="actualizarColaborador">
+    <part name="parameters" element="tns:actualizarColaborador" />
+  </message>
+  <message name="actualizarColaboradorResponse">
+    <part name="parameters" element="tns:actualizarColaboradorResponse" />
+  </message>
+  <message name="actualizarCondicionMedica">
+    <part name="parameters" element="tns:actualizarCondicionMedica" />
+  </message>
+  <message name="actualizarCondicionMedicaResponse">
+    <part name="parameters" element="tns:actualizarCondicionMedicaResponse" />
+  </message>
+  <message name="listarCuotasPorMatricula">
+    <part name="parameters" element="tns:listarCuotasPorMatricula" />
+  </message>
+  <message name="listarCuotasPorMatriculaResponse">
+    <part name="parameters" element="tns:listarCuotasPorMatriculaResponse" />
+  </message>
+  <message name="insertarCondicionMedica">
+    <part name="parameters" element="tns:insertarCondicionMedica" />
+  </message>
+  <message name="insertarCondicionMedicaResponse">
+    <part name="parameters" element="tns:insertarCondicionMedicaResponse" />
+  </message>
+  <message name="eliminarBebePorApoderado">
+    <part name="parameters" element="tns:eliminarBebePorApoderado" />
+  </message>
+  <message name="eliminarBebePorApoderadoResponse">
+    <part name="parameters" element="tns:eliminarBebePorApoderadoResponse" />
+  </message>
+  <message name="eliminarCondicionMedica">
+    <part name="parameters" element="tns:eliminarCondicionMedica" />
+  </message>
+  <message name="eliminarCondicionMedicaResponse">
+    <part name="parameters" element="tns:eliminarCondicionMedicaResponse" />
+  </message>
+  <message name="listarCondMedicasPorNombre">
+    <part name="parameters" element="tns:listarCondMedicasPorNombre" />
+  </message>
+  <message name="listarCondMedicasPorNombreResponse">
+    <part name="parameters" element="tns:listarCondMedicasPorNombreResponse" />
+  </message>
+  <message name="listarBebePorApoderado">
+    <part name="parameters" element="tns:listarBebePorApoderado" />
+  </message>
+  <message name="listarBebePorApoderadoResponse">
+    <part name="parameters" element="tns:listarBebePorApoderadoResponse" />
+  </message>
+  <message name="actualizarContactoEmergencia">
+    <part name="parameters" element="tns:actualizarContactoEmergencia" />
+  </message>
+  <message name="actualizarContactoEmergenciaResponse">
+    <part name="parameters" element="tns:actualizarContactoEmergenciaResponse" />
+  </message>
+  <message name="listarCursosPorNombre">
+    <part name="parameters" element="tns:listarCursosPorNombre" />
+  </message>
+  <message name="listarCursosPorNombreResponse">
+    <part name="parameters" element="tns:listarCursosPorNombreResponse" />
+  </message>
+  <message name="listarClientesDelDia">
+    <part name="parameters" element="tns:listarClientesDelDia" />
+  </message>
+  <message name="listarClientesDelDiaResponse">
+    <part name="parameters" element="tns:listarClientesDelDiaResponse" />
+  </message>
+  <message name="listarDocentesDelDia">
+    <part name="parameters" element="tns:listarDocentesDelDia" />
+  </message>
+  <message name="listarDocentesDelDiaResponse">
+    <part name="parameters" element="tns:listarDocentesDelDiaResponse" />
+  </message>
+  <message name="actualizarApoderado">
+    <part name="parameters" element="tns:actualizarApoderado" />
+  </message>
+  <message name="actualizarApoderadoResponse">
+    <part name="parameters" element="tns:actualizarApoderadoResponse" />
+  </message>
+  <message name="insertarClaseParticular">
+    <part name="parameters" element="tns:insertarClaseParticular" />
+  </message>
+  <message name="insertarClaseParticularResponse">
+    <part name="parameters" element="tns:insertarClaseParticularResponse" />
+  </message>
+  <message name="eliminarApoderado">
+    <part name="parameters" element="tns:eliminarApoderado" />
+  </message>
+  <message name="eliminarApoderadoResponse">
+    <part name="parameters" element="tns:eliminarApoderadoResponse" />
+  </message>
+  <message name="listarClasesParticulares">
+    <part name="parameters" element="tns:listarClasesParticulares" />
+  </message>
+  <message name="listarClasesParticularesResponse">
+    <part name="parameters" element="tns:listarClasesParticularesResponse" />
+  </message>
+  <message name="listarCondMedicasPorGestante">
+    <part name="parameters" element="tns:listarCondMedicasPorGestante" />
+  </message>
+  <message name="listarCondMedicasPorGestanteResponse">
+    <part name="parameters" element="tns:listarCondMedicasPorGestanteResponse" />
+  </message>
+  <message name="insertarContactoEmergencia">
+    <part name="parameters" element="tns:insertarContactoEmergencia" />
+  </message>
+  <message name="insertarContactoEmergenciaResponse">
+    <part name="parameters" element="tns:insertarContactoEmergenciaResponse" />
+  </message>
+  <message name="listarContactosporCliente">
+    <part name="parameters" element="tns:listarContactosporCliente" />
+  </message>
+  <message name="listarContactosporClienteResponse">
+    <part name="parameters" element="tns:listarContactosporClienteResponse" />
+  </message>
+  <message name="actualizarClaseParticular">
+    <part name="parameters" element="tns:actualizarClaseParticular" />
+  </message>
+  <message name="actualizarClaseParticularResponse">
+    <part name="parameters" element="tns:actualizarClaseParticularResponse" />
+  </message>
+  <message name="generarReporteServicioPDF">
+    <part name="parameters" element="tns:generarReporteServicioPDF" />
+  </message>
+  <message name="generarReporteServicioPDFResponse">
+    <part name="parameters" element="tns:generarReporteServicioPDFResponse" />
+  </message>
+  <message name="listarGestacionPorGestante">
+    <part name="parameters" element="tns:listarGestacionPorGestante" />
+  </message>
+  <message name="listarGestacionPorGestanteResponse">
+    <part name="parameters" element="tns:listarGestacionPorGestanteResponse" />
+  </message>
+  <message name="listarParejaPorGestante">
+    <part name="parameters" element="tns:listarParejaPorGestante" />
+  </message>
+  <message name="listarParejaPorGestanteResponse">
+    <part name="parameters" element="tns:listarParejaPorGestanteResponse" />
+  </message>
+  <message name="listarMatriculaSaldoPorGestante">
+    <part name="parameters" element="tns:listarMatriculaSaldoPorGestante" />
+  </message>
+  <message name="listarMatriculaSaldoPorGestanteResponse">
+    <part name="parameters" element="tns:listarMatriculaSaldoPorGestanteResponse" />
+  </message>
+  <message name="insertarTipoColaborador">
+    <part name="parameters" element="tns:insertarTipoColaborador" />
+  </message>
+  <message name="insertarTipoColaboradorResponse">
+    <part name="parameters" element="tns:insertarTipoColaboradorResponse" />
+  </message>
+  <message name="actualizarHorario">
+    <part name="parameters" element="tns:actualizarHorario" />
+  </message>
+  <message name="actualizarHorarioResponse">
+    <part name="parameters" element="tns:actualizarHorarioResponse" />
+  </message>
+  <message name="eliminarDescuento">
+    <part name="parameters" element="tns:eliminarDescuento" />
+  </message>
+  <message name="eliminarDescuentoResponse">
+    <part name="parameters" element="tns:eliminarDescuentoResponse" />
+  </message>
+  <message name="listarMatriculaSaldoPorApoderado">
+    <part name="parameters" element="tns:listarMatriculaSaldoPorApoderado" />
+  </message>
+  <message name="listarMatriculaSaldoPorApoderadoResponse">
+    <part name="parameters" element="tns:listarMatriculaSaldoPorApoderadoResponse" />
+  </message>
+  <message name="eliminarGestacion">
+    <part name="parameters" element="tns:eliminarGestacion" />
+  </message>
+  <message name="eliminarGestacionResponse">
+    <part name="parameters" element="tns:eliminarGestacionResponse" />
+  </message>
+  <message name="listarTipoColaborador">
+    <part name="parameters" element="tns:listarTipoColaborador" />
+  </message>
+  <message name="listarTipoColaboradorResponse">
+    <part name="parameters" element="tns:listarTipoColaboradorResponse" />
+  </message>
+  <message name="actualizarGestacion">
+    <part name="parameters" element="tns:actualizarGestacion" />
+  </message>
+  <message name="actualizarGestacionResponse">
+    <part name="parameters" element="tns:actualizarGestacionResponse" />
+  </message>
+  <message name="actualizarMatricula">
+    <part name="parameters" element="tns:actualizarMatricula" />
+  </message>
+  <message name="actualizarMatriculaResponse">
+    <part name="parameters" element="tns:actualizarMatriculaResponse" />
+  </message>
+  <message name="actualizarGestante">
+    <part name="parameters" element="tns:actualizarGestante" />
+  </message>
+  <message name="actualizarGestanteResponse">
+    <part name="parameters" element="tns:actualizarGestanteResponse" />
+  </message>
+  <message name="eliminarMatricula">
+    <part name="parameters" element="tns:eliminarMatricula" />
+  </message>
+  <message name="eliminarMatriculaResponse">
+    <part name="parameters" element="tns:eliminarMatriculaResponse" />
+  </message>
+  <message name="listarMatriculaActivaPorGestante">
+    <part name="parameters" element="tns:listarMatriculaActivaPorGestante" />
+  </message>
+  <message name="listarMatriculaActivaPorGestanteResponse">
+    <part name="parameters" element="tns:listarMatriculaActivaPorGestanteResponse" />
+  </message>
+  <message name="listarDescuentosPorServicio">
+    <part name="parameters" element="tns:listarDescuentosPorServicio" />
+  </message>
+  <message name="listarDescuentosPorServicioResponse">
+    <part name="parameters" element="tns:listarDescuentosPorServicioResponse" />
+  </message>
+  <message name="insertarMatricula">
+    <part name="parameters" element="tns:insertarMatricula" />
+  </message>
+  <message name="insertarMatriculaResponse">
+    <part name="parameters" element="tns:insertarMatriculaResponse" />
+  </message>
+  <message name="listarHorariosPorCurso">
+    <part name="parameters" element="tns:listarHorariosPorCurso" />
+  </message>
+  <message name="listarHorariosPorCursoResponse">
+    <part name="parameters" element="tns:listarHorariosPorCursoResponse" />
+  </message>
+  <message name="eliminarTipoColaborador">
+    <part name="parameters" element="tns:eliminarTipoColaborador" />
+  </message>
+  <message name="eliminarTipoColaboradorResponse">
+    <part name="parameters" element="tns:eliminarTipoColaboradorResponse" />
+  </message>
+  <message name="insertarGestacion">
+    <part name="parameters" element="tns:insertarGestacion" />
+  </message>
+  <message name="insertarGestacionResponse">
+    <part name="parameters" element="tns:insertarGestacionResponse" />
+  </message>
+  <message name="listarGestantePorNombreDNI">
+    <part name="parameters" element="tns:listarGestantePorNombreDNI" />
+  </message>
+  <message name="listarGestantePorNombreDNIResponse">
+    <part name="parameters" element="tns:listarGestantePorNombreDNIResponse" />
+  </message>
+  <message name="actualizarTipoColaborador">
+    <part name="parameters" element="tns:actualizarTipoColaborador" />
+  </message>
+  <message name="actualizarTipoColaboradorResponse">
+    <part name="parameters" element="tns:actualizarTipoColaboradorResponse" />
+  </message>
+  <message name="registrarClienteEnHorario">
+    <part name="parameters" element="tns:registrarClienteEnHorario" />
+  </message>
+  <message name="registrarClienteEnHorarioResponse">
+    <part name="parameters" element="tns:registrarClienteEnHorarioResponse" />
+  </message>
+  <message name="listarCursosPosiblesBebe">
+    <part name="parameters" element="tns:listarCursosPosiblesBebe" />
+  </message>
+  <message name="listarCursosPosiblesBebeResponse">
+    <part name="parameters" element="tns:listarCursosPosiblesBebeResponse" />
+  </message>
+  <message name="listarClientesPorHorario">
+    <part name="parameters" element="tns:listarClientesPorHorario" />
+  </message>
+  <message name="listarClientesPorHorarioResponse">
+    <part name="parameters" element="tns:listarClientesPorHorarioResponse" />
+  </message>
+  <message name="actualizarDescuento">
+    <part name="parameters" element="tns:actualizarDescuento" />
+  </message>
+  <message name="actualizarDescuentoResponse">
+    <part name="parameters" element="tns:actualizarDescuentoResponse" />
+  </message>
+  <message name="insertarDescuento">
+    <part name="parameters" element="tns:insertarDescuento" />
+  </message>
+  <message name="insertarDescuentoResponse">
+    <part name="parameters" element="tns:insertarDescuentoResponse" />
+  </message>
+  <message name="listarClasesParticularesSinDocentePorGestante">
+    <part name="parameters" element="tns:listarClasesParticularesSinDocentePorGestante" />
+  </message>
+  <message name="listarClasesParticularesSinDocentePorGestanteResponse">
+    <part name="parameters" element="tns:listarClasesParticularesSinDocentePorGestanteResponse" />
+  </message>
+  <message name="listarClasesParticularesPorCliente">
+    <part name="parameters" element="tns:listarClasesParticularesPorCliente" />
+  </message>
+  <message name="listarClasesParticularesPorClienteResponse">
+    <part name="parameters" element="tns:listarClasesParticularesPorClienteResponse" />
+  </message>
+  <message name="listarClasesParticularesSinDocentePorApoderado">
+    <part name="parameters" element="tns:listarClasesParticularesSinDocentePorApoderado" />
+  </message>
+  <message name="listarClasesParticularesSinDocentePorApoderadoResponse">
+    <part name="parameters" element="tns:listarClasesParticularesSinDocentePorApoderadoResponse" />
+  </message>
+  <message name="listarMatriculaActivaPorApoderado">
+    <part name="parameters" element="tns:listarMatriculaActivaPorApoderado" />
+  </message>
+  <message name="listarMatriculaActivaPorApoderadoResponse">
+    <part name="parameters" element="tns:listarMatriculaActivaPorApoderadoResponse" />
+  </message>
+  <message name="verificarUsuario">
+    <part name="parameters" element="tns:verificarUsuario" />
+  </message>
+  <message name="verificarUsuarioResponse">
+    <part name="parameters" element="tns:verificarUsuarioResponse" />
+  </message>
+  <message name="eliminarCuota">
+    <part name="parameters" element="tns:eliminarCuota" />
+  </message>
+  <message name="eliminarCuotaResponse">
+    <part name="parameters" element="tns:eliminarCuotaResponse" />
+  </message>
+  <message name="actualizarCuota">
+    <part name="parameters" element="tns:actualizarCuota" />
+  </message>
+  <message name="actualizarCuotaResponse">
+    <part name="parameters" element="tns:actualizarCuotaResponse" />
+  </message>
+  <message name="insertarCurso">
+    <part name="parameters" element="tns:insertarCurso" />
+  </message>
+  <message name="insertarCursoResponse">
+    <part name="parameters" element="tns:insertarCursoResponse" />
+  </message>
+  <message name="actualizarCurso">
+    <part name="parameters" element="tns:actualizarCurso" />
+  </message>
+  <message name="actualizarCursoResponse">
+    <part name="parameters" element="tns:actualizarCursoResponse" />
+  </message>
+  <message name="insertarCuota">
+    <part name="parameters" element="tns:insertarCuota" />
+  </message>
+  <message name="insertarCuotaResponse">
+    <part name="parameters" element="tns:insertarCuotaResponse" />
+  </message>
+  <message name="insertarGestante">
+    <part name="parameters" element="tns:insertarGestante" />
+  </message>
+  <message name="insertarGestanteResponse">
+    <part name="parameters" element="tns:insertarGestanteResponse" />
+  </message>
+  <message name="insertarHorario">
+    <part name="parameters" element="tns:insertarHorario" />
+  </message>
+  <message name="insertarHorarioResponse">
+    <part name="parameters" element="tns:insertarHorarioResponse" />
+  </message>
+  <message name="eliminarHorario">
+    <part name="parameters" element="tns:eliminarHorario" />
+  </message>
+  <message name="eliminarHorarioResponse">
+    <part name="parameters" element="tns:eliminarHorarioResponse" />
+  </message>
+  <message name="listarDescuentos">
+    <part name="parameters" element="tns:listarDescuentos" />
+  </message>
+  <message name="listarDescuentosResponse">
+    <part name="parameters" element="tns:listarDescuentosResponse" />
+  </message>
+  <message name="listarAsistencia">
+    <part name="parameters" element="tns:listarAsistencia" />
+  </message>
+  <message name="listarAsistenciaResponse">
+    <part name="parameters" element="tns:listarAsistenciaResponse" />
+  </message>
+  <message name="eliminarGestante">
+    <part name="parameters" element="tns:eliminarGestante" />
+  </message>
+  <message name="eliminarGestanteResponse">
+    <part name="parameters" element="tns:eliminarGestanteResponse" />
+  </message>
+  <message name="actualizarBebe">
+    <part name="parameters" element="tns:actualizarBebe" />
+  </message>
+  <message name="actualizarBebeResponse">
+    <part name="parameters" element="tns:actualizarBebeResponse" />
+  </message>
+  <message name="eliminarBebe">
+    <part name="parameters" element="tns:eliminarBebe" />
+  </message>
+  <message name="eliminarBebeResponse">
+    <part name="parameters" element="tns:eliminarBebeResponse" />
+  </message>
+  <message name="eliminarCurso">
+    <part name="parameters" element="tns:eliminarCurso" />
+  </message>
+  <message name="eliminarCursoResponse">
+    <part name="parameters" element="tns:eliminarCursoResponse" />
+  </message>
+  <message name="insertarBebe">
+    <part name="parameters" element="tns:insertarBebe" />
+  </message>
+  <message name="insertarBebeResponse">
+    <part name="parameters" element="tns:insertarBebeResponse" />
+  </message>
+  <message name="listarSedes">
+    <part name="parameters" element="tns:listarSedes" />
+  </message>
+  <message name="listarSedesResponse">
+    <part name="parameters" element="tns:listarSedesResponse" />
+  </message>
+  <message name="actualizarSede">
+    <part name="parameters" element="tns:actualizarSede" />
+  </message>
+  <message name="actualizarSedeResponse">
+    <part name="parameters" element="tns:actualizarSedeResponse" />
+  </message>
+  <message name="eliminarPareja">
+    <part name="parameters" element="tns:eliminarPareja" />
+  </message>
+  <message name="eliminarParejaResponse">
+    <part name="parameters" element="tns:eliminarParejaResponse" />
+  </message>
+  <message name="insertarPareja">
+    <part name="parameters" element="tns:insertarPareja" />
+  </message>
+  <message name="insertarParejaResponse">
+    <part name="parameters" element="tns:insertarParejaResponse" />
+  </message>
+  <message name="insertarSede">
+    <part name="parameters" element="tns:insertarSede" />
+  </message>
+  <message name="insertarSedeResponse">
+    <part name="parameters" element="tns:insertarSedeResponse" />
+  </message>
+  <message name="actualizarPareja">
+    <part name="parameters" element="tns:actualizarPareja" />
+  </message>
+  <message name="actualizarParejaResponse">
+    <part name="parameters" element="tns:actualizarParejaResponse" />
+  </message>
+  <message name="eliminarSede">
+    <part name="parameters" element="tns:eliminarSede" />
+  </message>
+  <message name="eliminarSedeResponse">
+    <part name="parameters" element="tns:eliminarSedeResponse" />
+  </message>
+  <portType name="Servicio">
+    <operation name="listarCondMedicasPorBebe">
+      <input wsam:Action="http://services/Servicio/listarCondMedicasPorBebeRequest" message="tns:listarCondMedicasPorBebe" />
+      <output wsam:Action="http://services/Servicio/listarCondMedicasPorBebeResponse" message="tns:listarCondMedicasPorBebeResponse" />
+    </operation>
+    <operation name="eliminarContactoEmergencia">
+      <input wsam:Action="http://services/Servicio/eliminarContactoEmergenciaRequest" message="tns:eliminarContactoEmergencia" />
+      <output wsam:Action="http://services/Servicio/eliminarContactoEmergenciaResponse" message="tns:eliminarContactoEmergenciaResponse" />
+    </operation>
+    <operation name="eliminarAsistencia">
+      <input wsam:Action="http://services/Servicio/eliminarAsistenciaRequest" message="tns:eliminarAsistencia" />
+      <output wsam:Action="http://services/Servicio/eliminarAsistenciaResponse" message="tns:eliminarAsistenciaResponse" />
+    </operation>
+    <operation name="listarDocentesPorNombreDni">
+      <input wsam:Action="http://services/Servicio/listarDocentesPorNombreDniRequest" message="tns:listarDocentesPorNombreDni" />
+      <output wsam:Action="http://services/Servicio/listarDocentesPorNombreDniResponse" message="tns:listarDocentesPorNombreDniResponse" />
+    </operation>
+    <operation name="insertarApoderado">
+      <input wsam:Action="http://services/Servicio/insertarApoderadoRequest" message="tns:insertarApoderado" />
+      <output wsam:Action="http://services/Servicio/insertarApoderadoResponse" message="tns:insertarApoderadoResponse" />
+    </operation>
+    <operation name="listarApoderadosPorNombreDNI">
+      <input wsam:Action="http://services/Servicio/listarApoderadosPorNombreDNIRequest" message="tns:listarApoderadosPorNombreDNI" />
+      <output wsam:Action="http://services/Servicio/listarApoderadosPorNombreDNIResponse" message="tns:listarApoderadosPorNombreDNIResponse" />
+    </operation>
+    <operation name="insertarColaborador">
+      <input wsam:Action="http://services/Servicio/insertarColaboradorRequest" message="tns:insertarColaborador" />
+      <output wsam:Action="http://services/Servicio/insertarColaboradorResponse" message="tns:insertarColaboradorResponse" />
+    </operation>
+    <operation name="actualizarAsistencia">
+      <input wsam:Action="http://services/Servicio/actualizarAsistenciaRequest" message="tns:actualizarAsistencia" />
+      <output wsam:Action="http://services/Servicio/actualizarAsistenciaResponse" message="tns:actualizarAsistenciaResponse" />
+    </operation>
+    <operation name="listarColaboradoresPorNombreDni">
+      <input wsam:Action="http://services/Servicio/listarColaboradoresPorNombreDniRequest" message="tns:listarColaboradoresPorNombreDni" />
+      <output wsam:Action="http://services/Servicio/listarColaboradoresPorNombreDniResponse" message="tns:listarColaboradoresPorNombreDniResponse" />
+    </operation>
+    <operation name="eliminarColaborador">
+      <input wsam:Action="http://services/Servicio/eliminarColaboradorRequest" message="tns:eliminarColaborador" />
+      <output wsam:Action="http://services/Servicio/eliminarColaboradorResponse" message="tns:eliminarColaboradorResponse" />
+    </operation>
+    <operation name="listarBebePorNombre">
+      <input wsam:Action="http://services/Servicio/listarBebePorNombreRequest" message="tns:listarBebePorNombre" />
+      <output wsam:Action="http://services/Servicio/listarBebePorNombreResponse" message="tns:listarBebePorNombreResponse" />
+    </operation>
+    <operation name="listarCondMedicasPorServicio">
+      <input wsam:Action="http://services/Servicio/listarCondMedicasPorServicioRequest" message="tns:listarCondMedicasPorServicio" />
+      <output wsam:Action="http://services/Servicio/listarCondMedicasPorServicioResponse" message="tns:listarCondMedicasPorServicioResponse" />
+    </operation>
+    <operation name="listarClientesDelDiaPorCurso">
+      <input wsam:Action="http://services/Servicio/listarClientesDelDiaPorCursoRequest" message="tns:listarClientesDelDiaPorCurso" />
+      <output wsam:Action="http://services/Servicio/listarClientesDelDiaPorCursoResponse" message="tns:listarClientesDelDiaPorCursoResponse" />
+    </operation>
+    <operation name="eliminarClaseParticular">
+      <input wsam:Action="http://services/Servicio/eliminarClaseParticularRequest" message="tns:eliminarClaseParticular" />
+      <output wsam:Action="http://services/Servicio/eliminarClaseParticularResponse" message="tns:eliminarClaseParticularResponse" />
+    </operation>
+    <operation name="actualizarColaborador">
+      <input wsam:Action="http://services/Servicio/actualizarColaboradorRequest" message="tns:actualizarColaborador" />
+      <output wsam:Action="http://services/Servicio/actualizarColaboradorResponse" message="tns:actualizarColaboradorResponse" />
+    </operation>
+    <operation name="actualizarCondicionMedica">
+      <input wsam:Action="http://services/Servicio/actualizarCondicionMedicaRequest" message="tns:actualizarCondicionMedica" />
+      <output wsam:Action="http://services/Servicio/actualizarCondicionMedicaResponse" message="tns:actualizarCondicionMedicaResponse" />
+    </operation>
+    <operation name="listarCuotasPorMatricula">
+      <input wsam:Action="http://services/Servicio/listarCuotasPorMatriculaRequest" message="tns:listarCuotasPorMatricula" />
+      <output wsam:Action="http://services/Servicio/listarCuotasPorMatriculaResponse" message="tns:listarCuotasPorMatriculaResponse" />
+    </operation>
+    <operation name="insertarCondicionMedica">
+      <input wsam:Action="http://services/Servicio/insertarCondicionMedicaRequest" message="tns:insertarCondicionMedica" />
+      <output wsam:Action="http://services/Servicio/insertarCondicionMedicaResponse" message="tns:insertarCondicionMedicaResponse" />
+    </operation>
+    <operation name="eliminarBebePorApoderado">
+      <input wsam:Action="http://services/Servicio/eliminarBebePorApoderadoRequest" message="tns:eliminarBebePorApoderado" />
+      <output wsam:Action="http://services/Servicio/eliminarBebePorApoderadoResponse" message="tns:eliminarBebePorApoderadoResponse" />
+    </operation>
+    <operation name="eliminarCondicionMedica">
+      <input wsam:Action="http://services/Servicio/eliminarCondicionMedicaRequest" message="tns:eliminarCondicionMedica" />
+      <output wsam:Action="http://services/Servicio/eliminarCondicionMedicaResponse" message="tns:eliminarCondicionMedicaResponse" />
+    </operation>
+    <operation name="listarCondMedicasPorNombre">
+      <input wsam:Action="http://services/Servicio/listarCondMedicasPorNombreRequest" message="tns:listarCondMedicasPorNombre" />
+      <output wsam:Action="http://services/Servicio/listarCondMedicasPorNombreResponse" message="tns:listarCondMedicasPorNombreResponse" />
+    </operation>
+    <operation name="listarBebePorApoderado">
+      <input wsam:Action="http://services/Servicio/listarBebePorApoderadoRequest" message="tns:listarBebePorApoderado" />
+      <output wsam:Action="http://services/Servicio/listarBebePorApoderadoResponse" message="tns:listarBebePorApoderadoResponse" />
+    </operation>
+    <operation name="actualizarContactoEmergencia">
+      <input wsam:Action="http://services/Servicio/actualizarContactoEmergenciaRequest" message="tns:actualizarContactoEmergencia" />
+      <output wsam:Action="http://services/Servicio/actualizarContactoEmergenciaResponse" message="tns:actualizarContactoEmergenciaResponse" />
+    </operation>
+    <operation name="listarCursosPorNombre">
+      <input wsam:Action="http://services/Servicio/listarCursosPorNombreRequest" message="tns:listarCursosPorNombre" />
+      <output wsam:Action="http://services/Servicio/listarCursosPorNombreResponse" message="tns:listarCursosPorNombreResponse" />
+    </operation>
+    <operation name="listarClientesDelDia">
+      <input wsam:Action="http://services/Servicio/listarClientesDelDiaRequest" message="tns:listarClientesDelDia" />
+      <output wsam:Action="http://services/Servicio/listarClientesDelDiaResponse" message="tns:listarClientesDelDiaResponse" />
+    </operation>
+    <operation name="listarDocentesDelDia">
+      <input wsam:Action="http://services/Servicio/listarDocentesDelDiaRequest" message="tns:listarDocentesDelDia" />
+      <output wsam:Action="http://services/Servicio/listarDocentesDelDiaResponse" message="tns:listarDocentesDelDiaResponse" />
+    </operation>
+    <operation name="actualizarApoderado">
+      <input wsam:Action="http://services/Servicio/actualizarApoderadoRequest" message="tns:actualizarApoderado" />
+      <output wsam:Action="http://services/Servicio/actualizarApoderadoResponse" message="tns:actualizarApoderadoResponse" />
+    </operation>
+    <operation name="insertarClaseParticular">
+      <input wsam:Action="http://services/Servicio/insertarClaseParticularRequest" message="tns:insertarClaseParticular" />
+      <output wsam:Action="http://services/Servicio/insertarClaseParticularResponse" message="tns:insertarClaseParticularResponse" />
+    </operation>
+    <operation name="eliminarApoderado">
+      <input wsam:Action="http://services/Servicio/eliminarApoderadoRequest" message="tns:eliminarApoderado" />
+      <output wsam:Action="http://services/Servicio/eliminarApoderadoResponse" message="tns:eliminarApoderadoResponse" />
+    </operation>
+    <operation name="listarClasesParticulares">
+      <input wsam:Action="http://services/Servicio/listarClasesParticularesRequest" message="tns:listarClasesParticulares" />
+      <output wsam:Action="http://services/Servicio/listarClasesParticularesResponse" message="tns:listarClasesParticularesResponse" />
+    </operation>
+    <operation name="listarCondMedicasPorGestante">
+      <input wsam:Action="http://services/Servicio/listarCondMedicasPorGestanteRequest" message="tns:listarCondMedicasPorGestante" />
+      <output wsam:Action="http://services/Servicio/listarCondMedicasPorGestanteResponse" message="tns:listarCondMedicasPorGestanteResponse" />
+    </operation>
+    <operation name="insertarContactoEmergencia">
+      <input wsam:Action="http://services/Servicio/insertarContactoEmergenciaRequest" message="tns:insertarContactoEmergencia" />
+      <output wsam:Action="http://services/Servicio/insertarContactoEmergenciaResponse" message="tns:insertarContactoEmergenciaResponse" />
+    </operation>
+    <operation name="listarContactosporCliente">
+      <input wsam:Action="http://services/Servicio/listarContactosporClienteRequest" message="tns:listarContactosporCliente" />
+      <output wsam:Action="http://services/Servicio/listarContactosporClienteResponse" message="tns:listarContactosporClienteResponse" />
+    </operation>
+    <operation name="actualizarClaseParticular">
+      <input wsam:Action="http://services/Servicio/actualizarClaseParticularRequest" message="tns:actualizarClaseParticular" />
+      <output wsam:Action="http://services/Servicio/actualizarClaseParticularResponse" message="tns:actualizarClaseParticularResponse" />
+    </operation>
+    <operation name="generarReporteServicioPDF">
+      <input wsam:Action="http://services/Servicio/generarReporteServicioPDFRequest" message="tns:generarReporteServicioPDF" />
+      <output wsam:Action="http://services/Servicio/generarReporteServicioPDFResponse" message="tns:generarReporteServicioPDFResponse" />
+    </operation>
+    <operation name="listarGestacionPorGestante">
+      <input wsam:Action="http://services/Servicio/listarGestacionPorGestanteRequest" message="tns:listarGestacionPorGestante" />
+      <output wsam:Action="http://services/Servicio/listarGestacionPorGestanteResponse" message="tns:listarGestacionPorGestanteResponse" />
+    </operation>
+    <operation name="listarParejaPorGestante">
+      <input wsam:Action="http://services/Servicio/listarParejaPorGestanteRequest" message="tns:listarParejaPorGestante" />
+      <output wsam:Action="http://services/Servicio/listarParejaPorGestanteResponse" message="tns:listarParejaPorGestanteResponse" />
+    </operation>
+    <operation name="listarMatriculaSaldoPorGestante">
+      <input wsam:Action="http://services/Servicio/listarMatriculaSaldoPorGestanteRequest" message="tns:listarMatriculaSaldoPorGestante" />
+      <output wsam:Action="http://services/Servicio/listarMatriculaSaldoPorGestanteResponse" message="tns:listarMatriculaSaldoPorGestanteResponse" />
+    </operation>
+    <operation name="insertarTipoColaborador">
+      <input wsam:Action="http://services/Servicio/insertarTipoColaboradorRequest" message="tns:insertarTipoColaborador" />
+      <output wsam:Action="http://services/Servicio/insertarTipoColaboradorResponse" message="tns:insertarTipoColaboradorResponse" />
+    </operation>
+    <operation name="actualizarHorario">
+      <input wsam:Action="http://services/Servicio/actualizarHorarioRequest" message="tns:actualizarHorario" />
+      <output wsam:Action="http://services/Servicio/actualizarHorarioResponse" message="tns:actualizarHorarioResponse" />
+    </operation>
+    <operation name="eliminarDescuento">
+      <input wsam:Action="http://services/Servicio/eliminarDescuentoRequest" message="tns:eliminarDescuento" />
+      <output wsam:Action="http://services/Servicio/eliminarDescuentoResponse" message="tns:eliminarDescuentoResponse" />
+    </operation>
+    <operation name="listarMatriculaSaldoPorApoderado">
+      <input wsam:Action="http://services/Servicio/listarMatriculaSaldoPorApoderadoRequest" message="tns:listarMatriculaSaldoPorApoderado" />
+      <output wsam:Action="http://services/Servicio/listarMatriculaSaldoPorApoderadoResponse" message="tns:listarMatriculaSaldoPorApoderadoResponse" />
+    </operation>
+    <operation name="eliminarGestacion">
+      <input wsam:Action="http://services/Servicio/eliminarGestacionRequest" message="tns:eliminarGestacion" />
+      <output wsam:Action="http://services/Servicio/eliminarGestacionResponse" message="tns:eliminarGestacionResponse" />
+    </operation>
+    <operation name="listarTipoColaborador">
+      <input wsam:Action="http://services/Servicio/listarTipoColaboradorRequest" message="tns:listarTipoColaborador" />
+      <output wsam:Action="http://services/Servicio/listarTipoColaboradorResponse" message="tns:listarTipoColaboradorResponse" />
+    </operation>
+    <operation name="actualizarGestacion">
+      <input wsam:Action="http://services/Servicio/actualizarGestacionRequest" message="tns:actualizarGestacion" />
+      <output wsam:Action="http://services/Servicio/actualizarGestacionResponse" message="tns:actualizarGestacionResponse" />
+    </operation>
+    <operation name="actualizarMatricula">
+      <input wsam:Action="http://services/Servicio/actualizarMatriculaRequest" message="tns:actualizarMatricula" />
+      <output wsam:Action="http://services/Servicio/actualizarMatriculaResponse" message="tns:actualizarMatriculaResponse" />
+    </operation>
+    <operation name="actualizarGestante">
+      <input wsam:Action="http://services/Servicio/actualizarGestanteRequest" message="tns:actualizarGestante" />
+      <output wsam:Action="http://services/Servicio/actualizarGestanteResponse" message="tns:actualizarGestanteResponse" />
+    </operation>
+    <operation name="eliminarMatricula">
+      <input wsam:Action="http://services/Servicio/eliminarMatriculaRequest" message="tns:eliminarMatricula" />
+      <output wsam:Action="http://services/Servicio/eliminarMatriculaResponse" message="tns:eliminarMatriculaResponse" />
+    </operation>
+    <operation name="listarMatriculaActivaPorGestante">
+      <input wsam:Action="http://services/Servicio/listarMatriculaActivaPorGestanteRequest" message="tns:listarMatriculaActivaPorGestante" />
+      <output wsam:Action="http://services/Servicio/listarMatriculaActivaPorGestanteResponse" message="tns:listarMatriculaActivaPorGestanteResponse" />
+    </operation>
+    <operation name="listarDescuentosPorServicio">
+      <input wsam:Action="http://services/Servicio/listarDescuentosPorServicioRequest" message="tns:listarDescuentosPorServicio" />
+      <output wsam:Action="http://services/Servicio/listarDescuentosPorServicioResponse" message="tns:listarDescuentosPorServicioResponse" />
+    </operation>
+    <operation name="insertarMatricula">
+      <input wsam:Action="http://services/Servicio/insertarMatriculaRequest" message="tns:insertarMatricula" />
+      <output wsam:Action="http://services/Servicio/insertarMatriculaResponse" message="tns:insertarMatriculaResponse" />
+    </operation>
+    <operation name="listarHorariosPorCurso">
+      <input wsam:Action="http://services/Servicio/listarHorariosPorCursoRequest" message="tns:listarHorariosPorCurso" />
+      <output wsam:Action="http://services/Servicio/listarHorariosPorCursoResponse" message="tns:listarHorariosPorCursoResponse" />
+    </operation>
+    <operation name="eliminarTipoColaborador">
+      <input wsam:Action="http://services/Servicio/eliminarTipoColaboradorRequest" message="tns:eliminarTipoColaborador" />
+      <output wsam:Action="http://services/Servicio/eliminarTipoColaboradorResponse" message="tns:eliminarTipoColaboradorResponse" />
+    </operation>
+    <operation name="insertarGestacion">
+      <input wsam:Action="http://services/Servicio/insertarGestacionRequest" message="tns:insertarGestacion" />
+      <output wsam:Action="http://services/Servicio/insertarGestacionResponse" message="tns:insertarGestacionResponse" />
+    </operation>
+    <operation name="listarGestantePorNombreDNI">
+      <input wsam:Action="http://services/Servicio/listarGestantePorNombreDNIRequest" message="tns:listarGestantePorNombreDNI" />
+      <output wsam:Action="http://services/Servicio/listarGestantePorNombreDNIResponse" message="tns:listarGestantePorNombreDNIResponse" />
+    </operation>
+    <operation name="actualizarTipoColaborador">
+      <input wsam:Action="http://services/Servicio/actualizarTipoColaboradorRequest" message="tns:actualizarTipoColaborador" />
+      <output wsam:Action="http://services/Servicio/actualizarTipoColaboradorResponse" message="tns:actualizarTipoColaboradorResponse" />
+    </operation>
+    <operation name="registrarClienteEnHorario">
+      <input wsam:Action="http://services/Servicio/registrarClienteEnHorarioRequest" message="tns:registrarClienteEnHorario" />
+      <output wsam:Action="http://services/Servicio/registrarClienteEnHorarioResponse" message="tns:registrarClienteEnHorarioResponse" />
+    </operation>
+    <operation name="listarCursosPosiblesBebe">
+      <input wsam:Action="http://services/Servicio/listarCursosPosiblesBebeRequest" message="tns:listarCursosPosiblesBebe" />
+      <output wsam:Action="http://services/Servicio/listarCursosPosiblesBebeResponse" message="tns:listarCursosPosiblesBebeResponse" />
+    </operation>
+    <operation name="listarClientesPorHorario">
+      <input wsam:Action="http://services/Servicio/listarClientesPorHorarioRequest" message="tns:listarClientesPorHorario" />
+      <output wsam:Action="http://services/Servicio/listarClientesPorHorarioResponse" message="tns:listarClientesPorHorarioResponse" />
+    </operation>
+    <operation name="actualizarDescuento">
+      <input wsam:Action="http://services/Servicio/actualizarDescuentoRequest" message="tns:actualizarDescuento" />
+      <output wsam:Action="http://services/Servicio/actualizarDescuentoResponse" message="tns:actualizarDescuentoResponse" />
+    </operation>
+    <operation name="insertarDescuento">
+      <input wsam:Action="http://services/Servicio/insertarDescuentoRequest" message="tns:insertarDescuento" />
+      <output wsam:Action="http://services/Servicio/insertarDescuentoResponse" message="tns:insertarDescuentoResponse" />
+    </operation>
+    <operation name="listarClasesParticularesSinDocentePorGestante">
+      <input wsam:Action="http://services/Servicio/listarClasesParticularesSinDocentePorGestanteRequest" message="tns:listarClasesParticularesSinDocentePorGestante" />
+      <output wsam:Action="http://services/Servicio/listarClasesParticularesSinDocentePorGestanteResponse" message="tns:listarClasesParticularesSinDocentePorGestanteResponse" />
+    </operation>
+    <operation name="listarClasesParticularesPorCliente">
+      <input wsam:Action="http://services/Servicio/listarClasesParticularesPorClienteRequest" message="tns:listarClasesParticularesPorCliente" />
+      <output wsam:Action="http://services/Servicio/listarClasesParticularesPorClienteResponse" message="tns:listarClasesParticularesPorClienteResponse" />
+    </operation>
+    <operation name="listarClasesParticularesSinDocentePorApoderado">
+      <input wsam:Action="http://services/Servicio/listarClasesParticularesSinDocentePorApoderadoRequest" message="tns:listarClasesParticularesSinDocentePorApoderado" />
+      <output wsam:Action="http://services/Servicio/listarClasesParticularesSinDocentePorApoderadoResponse" message="tns:listarClasesParticularesSinDocentePorApoderadoResponse" />
+    </operation>
+    <operation name="listarMatriculaActivaPorApoderado">
+      <input wsam:Action="http://services/Servicio/listarMatriculaActivaPorApoderadoRequest" message="tns:listarMatriculaActivaPorApoderado" />
+      <output wsam:Action="http://services/Servicio/listarMatriculaActivaPorApoderadoResponse" message="tns:listarMatriculaActivaPorApoderadoResponse" />
+    </operation>
+    <operation name="verificarUsuario">
+      <input wsam:Action="http://services/Servicio/verificarUsuarioRequest" message="tns:verificarUsuario" />
+      <output wsam:Action="http://services/Servicio/verificarUsuarioResponse" message="tns:verificarUsuarioResponse" />
+    </operation>
+    <operation name="eliminarCuota">
+      <input wsam:Action="http://services/Servicio/eliminarCuotaRequest" message="tns:eliminarCuota" />
+      <output wsam:Action="http://services/Servicio/eliminarCuotaResponse" message="tns:eliminarCuotaResponse" />
+    </operation>
+    <operation name="actualizarCuota">
+      <input wsam:Action="http://services/Servicio/actualizarCuotaRequest" message="tns:actualizarCuota" />
+      <output wsam:Action="http://services/Servicio/actualizarCuotaResponse" message="tns:actualizarCuotaResponse" />
+    </operation>
+    <operation name="insertarCurso">
+      <input wsam:Action="http://services/Servicio/insertarCursoRequest" message="tns:insertarCurso" />
+      <output wsam:Action="http://services/Servicio/insertarCursoResponse" message="tns:insertarCursoResponse" />
+    </operation>
+    <operation name="actualizarCurso">
+      <input wsam:Action="http://services/Servicio/actualizarCursoRequest" message="tns:actualizarCurso" />
+      <output wsam:Action="http://services/Servicio/actualizarCursoResponse" message="tns:actualizarCursoResponse" />
+    </operation>
+    <operation name="insertarCuota">
+      <input wsam:Action="http://services/Servicio/insertarCuotaRequest" message="tns:insertarCuota" />
+      <output wsam:Action="http://services/Servicio/insertarCuotaResponse" message="tns:insertarCuotaResponse" />
+    </operation>
+    <operation name="insertarGestante">
+      <input wsam:Action="http://services/Servicio/insertarGestanteRequest" message="tns:insertarGestante" />
+      <output wsam:Action="http://services/Servicio/insertarGestanteResponse" message="tns:insertarGestanteResponse" />
+    </operation>
+    <operation name="insertarHorario">
+      <input wsam:Action="http://services/Servicio/insertarHorarioRequest" message="tns:insertarHorario" />
+      <output wsam:Action="http://services/Servicio/insertarHorarioResponse" message="tns:insertarHorarioResponse" />
+    </operation>
+    <operation name="eliminarHorario">
+      <input wsam:Action="http://services/Servicio/eliminarHorarioRequest" message="tns:eliminarHorario" />
+      <output wsam:Action="http://services/Servicio/eliminarHorarioResponse" message="tns:eliminarHorarioResponse" />
+    </operation>
+    <operation name="listarDescuentos">
+      <input wsam:Action="http://services/Servicio/listarDescuentosRequest" message="tns:listarDescuentos" />
+      <output wsam:Action="http://services/Servicio/listarDescuentosResponse" message="tns:listarDescuentosResponse" />
+    </operation>
+    <operation name="listarAsistencia">
+      <input wsam:Action="http://services/Servicio/listarAsistenciaRequest" message="tns:listarAsistencia" />
+      <output wsam:Action="http://services/Servicio/listarAsistenciaResponse" message="tns:listarAsistenciaResponse" />
+    </operation>
+    <operation name="eliminarGestante">
+      <input wsam:Action="http://services/Servicio/eliminarGestanteRequest" message="tns:eliminarGestante" />
+      <output wsam:Action="http://services/Servicio/eliminarGestanteResponse" message="tns:eliminarGestanteResponse" />
+    </operation>
+    <operation name="actualizarBebe">
+      <input wsam:Action="http://services/Servicio/actualizarBebeRequest" message="tns:actualizarBebe" />
+      <output wsam:Action="http://services/Servicio/actualizarBebeResponse" message="tns:actualizarBebeResponse" />
+    </operation>
+    <operation name="eliminarBebe">
+      <input wsam:Action="http://services/Servicio/eliminarBebeRequest" message="tns:eliminarBebe" />
+      <output wsam:Action="http://services/Servicio/eliminarBebeResponse" message="tns:eliminarBebeResponse" />
+    </operation>
+    <operation name="eliminarCurso">
+      <input wsam:Action="http://services/Servicio/eliminarCursoRequest" message="tns:eliminarCurso" />
+      <output wsam:Action="http://services/Servicio/eliminarCursoResponse" message="tns:eliminarCursoResponse" />
+    </operation>
+    <operation name="insertarBebe">
+      <input wsam:Action="http://services/Servicio/insertarBebeRequest" message="tns:insertarBebe" />
+      <output wsam:Action="http://services/Servicio/insertarBebeResponse" message="tns:insertarBebeResponse" />
+    </operation>
+    <operation name="listarSedes">
+      <input wsam:Action="http://services/Servicio/listarSedesRequest" message="tns:listarSedes" />
+      <output wsam:Action="http://services/Servicio/listarSedesResponse" message="tns:listarSedesResponse" />
+    </operation>
+    <operation name="actualizarSede">
+      <input wsam:Action="http://services/Servicio/actualizarSedeRequest" message="tns:actualizarSede" />
+      <output wsam:Action="http://services/Servicio/actualizarSedeResponse" message="tns:actualizarSedeResponse" />
+    </operation>
+    <operation name="eliminarPareja">
+      <input wsam:Action="http://services/Servicio/eliminarParejaRequest" message="tns:eliminarPareja" />
+      <output wsam:Action="http://services/Servicio/eliminarParejaResponse" message="tns:eliminarParejaResponse" />
+    </operation>
+    <operation name="insertarPareja">
+      <input wsam:Action="http://services/Servicio/insertarParejaRequest" message="tns:insertarPareja" />
+      <output wsam:Action="http://services/Servicio/insertarParejaResponse" message="tns:insertarParejaResponse" />
+    </operation>
+    <operation name="insertarSede">
+      <input wsam:Action="http://services/Servicio/insertarSedeRequest" message="tns:insertarSede" />
+      <output wsam:Action="http://services/Servicio/insertarSedeResponse" message="tns:insertarSedeResponse" />
+    </operation>
+    <operation name="actualizarPareja">
+      <input wsam:Action="http://services/Servicio/actualizarParejaRequest" message="tns:actualizarPareja" />
+      <output wsam:Action="http://services/Servicio/actualizarParejaResponse" message="tns:actualizarParejaResponse" />
+    </operation>
+    <operation name="eliminarSede">
+      <input wsam:Action="http://services/Servicio/eliminarSedeRequest" message="tns:eliminarSede" />
+      <output wsam:Action="http://services/Servicio/eliminarSedeResponse" message="tns:eliminarSedeResponse" />
+    </operation>
+  </portType>
+  <binding name="ServicioPortBinding" type="tns:Servicio">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarCondMedicasPorBebe">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarContactoEmergencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarAsistencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarDocentesPorNombreDni">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarApoderado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarApoderadosPorNombreDNI">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarColaborador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarAsistencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarColaboradoresPorNombreDni">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarColaborador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarBebePorNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarCondMedicasPorServicio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarClientesDelDiaPorCurso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarClaseParticular">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarColaborador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarCondicionMedica">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarCuotasPorMatricula">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarCondicionMedica">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarBebePorApoderado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarCondicionMedica">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarCondMedicasPorNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarBebePorApoderado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarContactoEmergencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarCursosPorNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarClientesDelDia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarDocentesDelDia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarApoderado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarClaseParticular">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarApoderado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarClasesParticulares">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarCondMedicasPorGestante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarContactoEmergencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarContactosporCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarClaseParticular">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteServicioPDF">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarGestacionPorGestante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarParejaPorGestante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarMatriculaSaldoPorGestante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarTipoColaborador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarHorario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarDescuento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarMatriculaSaldoPorApoderado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarGestacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTipoColaborador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarGestacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarMatricula">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarGestante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarMatricula">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarMatriculaActivaPorGestante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarDescuentosPorServicio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarMatricula">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarHorariosPorCurso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarTipoColaborador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarGestacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarGestantePorNombreDNI">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarTipoColaborador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="registrarClienteEnHorario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarCursosPosiblesBebe">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarClientesPorHorario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarDescuento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarDescuento">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarClasesParticularesSinDocentePorGestante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarClasesParticularesPorCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarClasesParticularesSinDocentePorApoderado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarMatriculaActivaPorApoderado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="verificarUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarCuota">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarCuota">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarCurso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarCurso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarCuota">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarGestante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarHorario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarHorario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarDescuentos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarAsistencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarGestante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarBebe">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarBebe">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarCurso">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarBebe">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarSedes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarSede">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarPareja">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarPareja">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarSede">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarPareja">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarSede">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="Servicio">
+    <port name="ServicioPort" binding="tns:ServicioPortBinding">
+      <soap:address location="http://23.22.34.143:8080/BendicionesSoftServices/Servicio" />
+    </port>
+  </service>
+</definitions>
