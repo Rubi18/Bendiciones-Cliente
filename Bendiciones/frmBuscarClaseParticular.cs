@@ -37,7 +37,7 @@ namespace Bendiciones
         {
             claseSeleccionada = (Service.claseParticular)dgvClasesParticulares.CurrentRow.DataBoundItem;
             Program.dbController.eliminarClaseParticular(claseSeleccionada.id_servicio);
-            frmMensaje mensaje = new frmMensaje("Se ha eliminado correctamente", "Mensaje Confirmacion", "");
+            frmMensaje mensaje = new frmMensaje("Se ha eliminado correctamente", "Mensaje Confirmacion", "Confirmar");
             this.Close();
         }
 

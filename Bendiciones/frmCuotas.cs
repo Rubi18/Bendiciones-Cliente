@@ -100,7 +100,7 @@ namespace Bendiciones
                 servMat.saldo = servMat.saldo - c.monto;
                 Program.dbController.actualizarMatricula(servMat);
                 Program.dbController.insertarCuota(c, servMat.idMatricula);
-                frmMensaje mensaje = new frmMensaje("Cuota Registrada exitosamente", "Mensaje Confirmación", "");
+                frmMensaje mensaje = new frmMensaje("Cuota Registrada exitosamente", "Mensaje Confirmación", "Confirmar");
 			}
 			
 		}

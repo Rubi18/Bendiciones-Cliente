@@ -135,12 +135,12 @@ namespace Bendiciones
 				if (estadoObjCur == Estado.Nuevo)
 				{
 					Program.dbController.insertarCurso(curso);
-					frmMensaje mensaje = new frmMensaje("Curso Registrado exitosamente", "Mensaje Confirmacion", "");
+					frmMensaje mensaje = new frmMensaje("Curso Registrado exitosamente", "Mensaje Confirmacion", "Confirmar");
 				}
 				else if (estadoObjCur == Estado.Modificar)
 				{
 					Program.dbController.actualizarCurso(curso);
-					frmMensaje mensaje = new frmMensaje("Se han actualizado los datos", "Mensaje Confirmacion", "");
+					frmMensaje mensaje = new frmMensaje("Se han actualizado los datos", "Mensaje Confirmacion", "Confirmar");
 				}
 				limpiarComponentes();
 				estadoComponentes(Estado.Inicial);

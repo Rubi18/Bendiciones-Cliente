@@ -182,12 +182,6 @@
     <Compile Include="frmReportes.Designer.cs">
       <DependentUpon>frmReportes.cs</DependentUpon>
     </Compile>
-    <Compile Include="MensajeOK.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MensajeOK.Designer.cs">
-      <DependentUpon>MensajeOK.cs</DependentUpon>
-    </Compile>
     <Compile Include="Estado.cs" />
     <Compile Include="frmBuscarCliente.cs">
       <SubType>Form</SubType>
@@ -362,9 +356,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportes.resx">
       <DependentUpon>frmReportes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MensajeOK.resx">
-      <DependentUpon>MensajeOK.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarCliente.resx">
       <DependentUpon>frmBuscarCliente.cs</DependentUpon>

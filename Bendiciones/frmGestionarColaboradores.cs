@@ -268,13 +268,13 @@ namespace Bendiciones
                 if (estadoObjColab == Estado.Nuevo)
                 {
                     Program.dbController.insertarColaborador(colaborador);
-					frmMensaje mensaje = new frmMensaje("Colaborador registrado correctamente.", "Mensaje Confirmacion", "");
+					frmMensaje mensaje = new frmMensaje("Colaborador registrado correctamente.", "Mensaje Confirmacion", "Confirmar");
                     correo.CorreoNuevoColaborador(colaborador);
                 }
                 else if (estadoObjColab == Estado.Modificar)
                 {
                     Program.dbController.actualizarColaborador(colaborador);
-                    frmMensaje mensaje = new frmMensaje("Se han actualizado los datos.", "Mensaje Confirmacion", "");
+                    frmMensaje mensaje = new frmMensaje("Se han actualizado los datos.", "Mensaje Confirmacion", "Confirmar");
                     correo.CorreoNuevoColaborador(colaborador);
                 }
 

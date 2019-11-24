@@ -101,7 +101,7 @@ namespace Bendiciones
                 Console.WriteLine(h.fecha.ToShortDateString());
                 Program.dbController.insertarHorario(h, curso.id_servicio);
             }
-            frmMensaje mensaje = new frmMensaje("Horarios registrados", "Mensaje de confirmación", "");
+            frmMensaje mensaje = new frmMensaje("Horarios registrados", "Mensaje de confirmación", "Confirmar");
         }
 
         private void dgvHorarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

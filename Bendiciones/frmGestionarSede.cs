@@ -116,7 +116,7 @@ namespace Bendiciones
 				if (estadoObjSede == Estado.Nuevo)
 				{
 					Program.dbController.insertarSede(sede);
-					frmMensaje mensaje = new frmMensaje("Sede Registrada exitosamente", "Mensaje Confirmacion", "");
+					frmMensaje mensaje = new frmMensaje("Sede Registrada exitosamente", "Mensaje Confirmacion", "Confirmar");
 					txtDistrito.Text = "";
 					txtDireccion.Text = "";
 					txtTelefono.Text = "";
@@ -124,7 +124,7 @@ namespace Bendiciones
 				else if (estadoObjSede == Estado.Modificar)
 				{
 					Program.dbController.actualizarSede(sede);
-					frmMensaje mensaje = new frmMensaje("Se han actualizado los datos", "Mensaje Confirmacion", "");
+					frmMensaje mensaje = new frmMensaje("Se han actualizado los datos", "Mensaje Confirmacion", "Confirmar");
 				}
 				limpiarComponentes();
 				estadoComponentes(Estado.Inicial);

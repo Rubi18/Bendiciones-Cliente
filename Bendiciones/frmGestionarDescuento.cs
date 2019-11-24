@@ -134,12 +134,12 @@ namespace Bendiciones
 				if (estadoObjDescuento == Estado.Nuevo)
 				{
 					Program.dbController.insertarDescuento(descuento);
-					frmMensaje mensaje = new frmMensaje("Descuento Registrado exitosamente.", "Mensaje Confirmacion", "");
+					frmMensaje mensaje = new frmMensaje("Descuento Registrado exitosamente.", "Mensaje Confirmacion", "Confirmar");
 				}
 				else if (estadoObjDescuento == Estado.Modificar)
 				{
 					Program.dbController.actualizarDescuento(descuento);
-					frmMensaje mensaje = new frmMensaje("Se han actualizado los datos", "Mensaje Confirmacion", "");
+					frmMensaje mensaje = new frmMensaje("Se han actualizado los datos", "Mensaje Confirmacion", "Confirmar");
 				}
 				limpiarCompentes();
 				estadoComponentes(Estado.Inicial);

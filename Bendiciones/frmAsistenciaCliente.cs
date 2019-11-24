@@ -78,7 +78,7 @@ namespace Bendiciones
                 Service.asistencia a = asistencias[dgvPorAsistir.CurrentRow.Index];
                 a.asistio = true;
                 Program.dbController.actualizarAsistencia(a);
-                frmMensaje mensaje = new frmMensaje("Asistencia registrada", "Mensaje de confirmación", "");
+                frmMensaje mensaje = new frmMensaje("Asistencia registrada", "Mensaje de confirmación", "Confirmar");
             }
             else
             {

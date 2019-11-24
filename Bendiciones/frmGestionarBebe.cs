@@ -83,9 +83,6 @@ namespace Bendiciones
             }
 
             bebeSeleccionado.condMedicas = condicionMedicas.ToArray();
-
-            
-
             this.DialogResult = DialogResult.OK;
         }
 

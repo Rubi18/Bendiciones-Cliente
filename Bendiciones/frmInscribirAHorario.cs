@@ -56,22 +56,22 @@ namespace Bendiciones
 
                     if (Program.dbController.listarMatriculaActivaPorApoderado(cliente.idPersona) != null)
                     {
-                        Console.WriteLine("apoderado: listar no es null");
+                        //Console.WriteLine("apoderado: listar no es null");
                         foreach (Service.matricula m in Program.dbController.listarMatriculaActivaPorApoderado(cliente.idPersona))
                         {
                             Service.bebe b = (Service.bebe)cboBebes.SelectedItem;
-                            Console.WriteLine("id bebe seleccionado:");
-                            Console.WriteLine(b.idPersona);
-                            Console.WriteLine("id bebe de matricula:");
-                            Console.WriteLine(m.bebe.idPersona);
-                            if (((Service.bebe)cboBebes.SelectedItem).idPersona == m.bebe.idPersona)
+                            //Console.WriteLine("id bebe seleccionado:");
+                            //Console.WriteLine(b.idPersona);
+                            //Console.WriteLine("id bebe de matricula:");
+                            //Console.WriteLine(m.bebe.idPersona);
+                            //if (((Service.bebe)cboBebes.SelectedItem).idPersona == m.bebe.idPersona)
                             {
                                 mats.Add(m);
                             }
                                 
                         }
                         
-                        Console.WriteLine("lista mat por apoderado");
+                       // Console.WriteLine("lista mat por apoderado");
                     }
 
                 }
@@ -79,7 +79,7 @@ namespace Bendiciones
                 {
                     if (Program.dbController.listarMatriculaActivaPorGestante(cliente.idPersona) != null)
                     {
-                        Console.WriteLine("gestante: listar no es null");
+                        //Console.WriteLine("gestante: listar no es null");
                         foreach(Service.matricula m in Program.dbController.listarMatriculaActivaPorGestante(cliente.idPersona))
                         {
                             mats.Add(m);
@@ -92,10 +92,10 @@ namespace Bendiciones
                 cboServicios.DataSource = mats;
 
                 //prueba}
-                foreach (Service.matricula m in mats)
-                {
-                    Console.WriteLine(m.servicio.nombre);
-                }
+                //foreach (Service.matricula m in mats)
+                //{
+                //    //Console.WriteLine(m.servicio.nombre);
+                //}
 
 
             }
@@ -147,10 +147,8 @@ namespace Bendiciones
                 {
                     a.persona = (Service.persona)cboBebes.SelectedItem;
                 }
-
-
                 Program.dbController.registrarClienteEnHorario(a);
-                frmMensaje mensaje = new frmMensaje("Cliente registrado en horario", "Mensaje Confirmación", "");
+                frmMensaje mensaje = new frmMensaje("Cliente registrado en horario", "Mensaje Confirmación", "Confirmar");
             }
             
         }

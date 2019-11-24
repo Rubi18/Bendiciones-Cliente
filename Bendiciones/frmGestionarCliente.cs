@@ -285,12 +285,12 @@ namespace Bendiciones
                 if (estadoObjCliente == Estado.Nuevo)
                 {
                     string cod = Program.dbController.insertarApoderado(cliente, "SEDE");
-                    frmMensaje mensaje = new frmMensaje("Cliente apoderado registrado", "Mensaje de confirmación", "");
+                    frmMensaje mensaje = new frmMensaje("Cliente apoderado registrado", "Mensaje de confirmación", "Confirmar");
                 }
                 else
                 {
                     Program.dbController.actualizarApoderado(cliente);
-                    frmMensaje mensaje = new frmMensaje("Cliente apoderado actualizado", "Mensaje de confirmación", "");
+                    frmMensaje mensaje = new frmMensaje("Cliente apoderado actualizado", "Mensaje de confirmación", "Confirmar");
                 }
 				
 			}

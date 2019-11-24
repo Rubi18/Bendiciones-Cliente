@@ -132,7 +132,7 @@ namespace Bendiciones
                     }
 
                     Program.dbController.insertarMatricula(m);
-                    frmMensaje mensaje = new frmMensaje("Matrícula Registrada exitosamente", "Mensaje Confirmación", "");
+                    frmMensaje mensaje = new frmMensaje("Matrícula Registrada exitosamente", "Mensaje Confirmación", "Confirmar");
 
 
                 }

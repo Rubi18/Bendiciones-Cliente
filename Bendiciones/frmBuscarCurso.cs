@@ -49,7 +49,7 @@ namespace Bendiciones
 		{
 			cursoSeleccionado = (Service.curso)dgvCursos.CurrentRow.DataBoundItem;
 			Program.dbController.eliminarCurso(cursoSeleccionado.id_servicio);
-			frmMensaje mensaje = new frmMensaje("Curso Eliminado exitosamente", "Mensaje Confirmacion", "");
+			frmMensaje mensaje = new frmMensaje("Curso Eliminado exitosamente", "Mensaje Confirmacion", "Confirmar");
 			this.Close();
 		}
 	}
