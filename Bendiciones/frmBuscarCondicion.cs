@@ -42,7 +42,7 @@ namespace Bendiciones
 		{
 			Service.condicionMedica conSeleccionada = (Service.condicionMedica)dgvCondiciones.CurrentRow.DataBoundItem;
 			Program.dbController.eliminarCondicionMedica(conSeleccionada.id_cond);
-			MessageBox.Show("Eliminado correctamente.", "Mensaje Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			frmMensaje mensaje = new frmMensaje("Eliminado correctamente.", "Mensaje Confirmacion", "");
 			this.Close();
 		}
 	}

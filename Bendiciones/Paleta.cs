@@ -11,7 +11,7 @@ namespace Bendiciones
     class Paleta
     {
         static string hexValue1 = "#D3BFD9";
-        static string hexValue2 = "#F2E2C4";
+        static string hexValue2 = "#f7f700";
         static string hexValue3 = "#FFA214";
         static string hexValue4 = "#A6401B";
         static string hexValue5 = "#401309";

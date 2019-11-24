@@ -41,7 +41,7 @@ namespace Bendiciones
 
             if (colaborador.idPersona == 0)
             {
-                MessageBox.Show("Usuario o Contraseña inválido", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                frmMensaje mensaje = new frmMensaje("Usuario o Contraseña inválido", "", "");
                 return null;
             }
 
@@ -55,7 +55,7 @@ namespace Bendiciones
                 minutos = (current.TimeOfDay - horaBloqueo.TimeOfDay).TotalMinutes;
                 if (minutos < 1)
                 {
-                    MessageBox.Show("Excedio el numero de intentos, vuelva a intentar en " + transformar(minutos) + " segundos");
+                    frmMensaje mensaje = new frmMensaje("Excedio el numero de intentos, vuelva a intentar en " + transformar(minutos) + " segundos","","");
                     return null;
                 }
                 else {
@@ -72,7 +72,7 @@ namespace Bendiciones
                 {
                     colaborador.intentos += 1;
                     Program.dbController.actualizarColaborador(colaborador);
-                    MessageBox.Show("Contraseña incorrecta \nIntentos restantes: " + (3 - colaborador.intentos), "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    frmMensaje mensaje = new frmMensaje("Contraseña incorrecta \nIntentos restantes: " + (3 - colaborador.intentos), "", "");
                     if (colaborador.intentos == 3)
                     {
                         int hora = DateTime.Now.Hour;
@@ -92,7 +92,7 @@ namespace Bendiciones
         {
             if(txtUser.Text.Equals("") || txtPassword.Text.Equals(""))
             {
-                MessageBox.Show("Ingresar usuario y/o contraseñña", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                frmMensaje mensaje = new frmMensaje("Ingresar usuario y/o contraseñña", "", "");
             }
             else
             {

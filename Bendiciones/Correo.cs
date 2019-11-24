@@ -33,7 +33,7 @@ namespace Bendiciones
 					smtp.Credentials = new NetworkCredential(emailFromAddress, password);
 					smtp.EnableSsl = enableSSL;
 					smtp.Send(mail);
-					MessageBox.Show("Se ha enviado el correo a " + colaborador.email, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					frmMensaje mensaje = new frmMensaje("Se ha enviado el correo a " + colaborador.email, "", "");
 				}
 			}
                
@@ -55,7 +55,7 @@ namespace Bendiciones
 					smtp.Credentials = new NetworkCredential(emailFromAddress, password);
 					smtp.EnableSsl = enableSSL;
 					smtp.Send(mail);
-					MessageBox.Show("Se ha enviado el correo a " + cliente.email, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					frmMensaje mensaje = new frmMensaje("Se ha enviado el correo a " + cliente.email, "", "");
 				}
 			}
 

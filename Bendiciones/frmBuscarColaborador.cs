@@ -44,7 +44,7 @@ namespace Bendiciones
 		{
 			colabSeleccionado = (Service.colaborador)dgvColaborador.CurrentRow.DataBoundItem;
 			Program.dbController.eliminarColaborador(colabSeleccionado.idPersona);
-			MessageBox.Show("Se ha eliminado correctamente", "Mensaje Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			frmMensaje mensaje = new frmMensaje("Se ha eliminado correctamente", "Mensaje Confirmacion", "");
 			this.Close();
 		}
 

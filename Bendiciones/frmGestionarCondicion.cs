@@ -84,11 +84,11 @@ namespace Bendiciones
             if(estadoObjCon == Estado.Nuevo)
             {
                 Program.dbController.insertarCondicionMedica(condicion);
-                MessageBox.Show("Condicion Medica Registrada exitosamente", "Mensaje Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmMensaje mensaje = new frmMensaje("Condicion Medica Registrada exitosamente", "Mensaje Confirmacion", "");
             } else if(estadoObjCon == Estado.Modificar)
             {
                 Program.dbController.actualizarCondicionMedica(condicion);
-                MessageBox.Show("Se han actualizado los datos", "Mensaje Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmMensaje mensaje = new frmMensaje("Se han actualizado los datos", "Mensaje Confirmacion", "");
             }
 			limpiarComponentes();
 			estadoComponentes(Estado.Inicial);

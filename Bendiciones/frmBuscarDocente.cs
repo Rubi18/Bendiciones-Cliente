@@ -34,8 +34,8 @@ namespace Bendiciones
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtNombre.Text)) {
-                frmMensaje msg = new frmMensaje();
-                msg.ventanaMensaje("Ingresar nombre de profesor");
+                //frmMensaje msg = new frmMensaje();
+                //msg.ventanaMensaje("Ingresar nombre de profesor");
             } else
             {
                 dgvProfesores.DataSource = Program.dbController.listarDocentesPorNombreDni(txtNombre.Text);

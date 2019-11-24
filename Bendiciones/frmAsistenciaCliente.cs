@@ -78,11 +78,11 @@ namespace Bendiciones
                 Service.asistencia a = asistencias[dgvPorAsistir.CurrentRow.Index];
                 a.asistio = true;
                 Program.dbController.actualizarAsistencia(a);
-                MessageBox.Show("Asistencia registrada", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmMensaje mensaje = new frmMensaje("Asistencia registrada", "Mensaje de confirmación", "");
             }
             else
             {
-                MessageBox.Show("No hay asistentes el día de hoy", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                frmMensaje mensaje = new frmMensaje("No hay asistentes el día de hoy", "Mensaje de error", "");
             }
             
         }

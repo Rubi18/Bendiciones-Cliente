@@ -90,23 +90,23 @@ namespace Bendiciones
 			float i;
 			if (txtPorcentaje.Text.Equals("") || txtNombre.Text.Equals("") || txtDescripcion.Text.Equals("")) 
 			{
-				MessageBox.Show("Todos los campos son obligatorios", "Error de Campos",MessageBoxButtons.OK,MessageBoxIcon.Error);
+				frmMensaje mensaje = new frmMensaje("Todos los campos son obligatorios", "Error de Campos","");
 				return false;
 			}
 
 			if (!float.TryParse(txtPorcentaje.Text,out i))
 			{	
-				MessageBox.Show("Ingrese un procentaje valido(Ej. 25, 30.5)", "Porcentaje Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				frmMensaje mensaje = new frmMensaje("Ingrese un procentaje valido(Ej. 25, 30.5)", "Porcentaje Invalido", "");
 				return false;
 			}
 			if (float.Parse(txtPorcentaje.Text) < 0 || float.Parse(txtPorcentaje.Text) > 100)
 			{
-				MessageBox.Show("El porcentaje debe estar entre 0 y 100", "Porcentaje Invalido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				frmMensaje mensaje = new frmMensaje("El porcentaje debe estar entre 0 y 100", "Porcentaje Invalido", "");
 				return false;
 			}
 			if (cboTipo.SelectedIndex == -1)
 			{
-				MessageBox.Show("Escoja un Tipo de Seguro", "Error de Tipo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				frmMensaje mensaje = new frmMensaje("Escoja un Tipo de Seguro", "Error de Tipo", "");
 				return false;
 			}
 			return true;
@@ -128,18 +128,18 @@ namespace Bendiciones
 				}
 				else
 				{
-					MessageBox.Show("Selecciona tipo de descuento válido", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+					frmMensaje mensaje = new frmMensaje("Selecciona tipo de descuento válido", "", "");
 				}
 
 				if (estadoObjDescuento == Estado.Nuevo)
 				{
 					Program.dbController.insertarDescuento(descuento);
-					MessageBox.Show("Descuento Registrado exitosamente.", "Mensaje Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					frmMensaje mensaje = new frmMensaje("Descuento Registrado exitosamente.", "Mensaje Confirmacion", "");
 				}
 				else if (estadoObjDescuento == Estado.Modificar)
 				{
 					Program.dbController.actualizarDescuento(descuento);
-					MessageBox.Show("Se han actualizado los datos", "Mensaje Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					frmMensaje mensaje = new frmMensaje("Se han actualizado los datos", "Mensaje Confirmacion", "");
 				}
 				limpiarCompentes();
 				estadoComponentes(Estado.Inicial);

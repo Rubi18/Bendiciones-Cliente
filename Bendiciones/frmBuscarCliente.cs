@@ -118,7 +118,7 @@ namespace Bendiciones
         {
             if (dgvClientes.RowCount == 0)
             {
-                MessageBox.Show("No hay clientes para seleccionar", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmMensaje mensaje = new frmMensaje("No hay clientes para seleccionar", "Mensaje de advertencia", "");
             }
             else
             {
@@ -132,7 +132,7 @@ namespace Bendiciones
             //this.DialogResult = DialogResult.OK;
             //else
             //{
-            //    MessageBox.Show("No se ha seleccionado un cliente", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    frmMensaje mensaje = new frmMensaje("No se ha seleccionado un cliente", "Mensaje de advertencia", "");
             //}
         }
 

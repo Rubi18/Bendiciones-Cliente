@@ -187,17 +187,17 @@ namespace Bendiciones
 				txtNumColeg.Text.Equals("") || (rbFemenino.Checked==false && rbMasculino.Checked == false) || 
 				cboTipo.SelectedIndex ==-1 || txtProfesion.Text.Equals(""))
             {
-				MessageBox.Show("Todos los campos son obligatorios.","",MessageBoxButtons.OK,MessageBoxIcon.Error);
+				frmMensaje mensaje = new frmMensaje("Todos los campos son obligatorios.","","");
 				return false;
 			}
             if (!IsValidEmail(txtCorreo.Text))
             {
-                MessageBox.Show("Ingrese un correo electronico valido", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                frmMensaje mensaje = new frmMensaje("Ingrese un correo electronico valido", "", "");
                 return false;
             }
             if (!int.TryParse(txtDNI.Text,out i) || !int.TryParse(txtTelefono.Text, out i) || !int.TryParse(txtNumColeg.Text, out i)) 
             {
-                MessageBox.Show("Dni, Telefono y Numero de Colegiatura deben ser numericos", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                frmMensaje mensaje = new frmMensaje("Dni, Telefono y Numero de Colegiatura deben ser numericos", "", "");
                 return false;
             }
             
@@ -268,13 +268,13 @@ namespace Bendiciones
                 if (estadoObjColab == Estado.Nuevo)
                 {
                     Program.dbController.insertarColaborador(colaborador);
-					MessageBox.Show("Colaborador registrado correctamente.", "Mensaje Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					frmMensaje mensaje = new frmMensaje("Colaborador registrado correctamente.", "Mensaje Confirmacion", "");
                     correo.CorreoNuevoColaborador(colaborador);
                 }
                 else if (estadoObjColab == Estado.Modificar)
                 {
                     Program.dbController.actualizarColaborador(colaborador);
-                    MessageBox.Show("Se han actualizado los datos.", "Mensaje Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmMensaje mensaje = new frmMensaje("Se han actualizado los datos.", "Mensaje Confirmacion", "");
                     correo.CorreoNuevoColaborador(colaborador);
                 }
 

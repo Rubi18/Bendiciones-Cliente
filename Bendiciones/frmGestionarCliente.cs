@@ -285,12 +285,12 @@ namespace Bendiciones
                 if (estadoObjCliente == Estado.Nuevo)
                 {
                     string cod = Program.dbController.insertarApoderado(cliente, "SEDE");
-                    MessageBox.Show("Cliente apoderado registrado", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmMensaje mensaje = new frmMensaje("Cliente apoderado registrado", "Mensaje de confirmación", "");
                 }
                 else
                 {
                     Program.dbController.actualizarApoderado(cliente);
-                    MessageBox.Show("Cliente apoderado actualizado", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmMensaje mensaje = new frmMensaje("Cliente apoderado actualizado", "Mensaje de confirmación", "");
                 }
 				
 			}
@@ -342,12 +342,12 @@ namespace Bendiciones
                 if (estadoObjCliente == Estado.Nuevo)
                 {
                     string cod = Program.dbController.insertarGestante(cliente, "SEDE");
-                    MessageBox.Show("Cliente apoderado registrado", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmMensaje mensaje = new frmMensaje("Cliente apoderado registrado", "Mensaje de confirmación", "");
                 }
                 else
                 {
                     Program.dbController.actualizarGestante(cliente);
-                    MessageBox.Show("Cliente apoderado actualizado", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmMensaje mensaje = new frmMensaje("Cliente apoderado actualizado", "Mensaje de confirmación", "");
                 }
             }
 		}

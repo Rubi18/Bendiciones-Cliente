@@ -94,15 +94,16 @@ namespace Bendiciones
 
 		public bool verificarCampos()
 		{
+			
 			float i;
 			if (txtNombreCurso.Text.Equals("")|| txtDescripcion.Text.Equals("") || txtPrecio.Text.Equals(""))
 			{
-				MessageBox.Show("Todos los campos son obligatorios", "Error de campos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				frmMensaje mensaje = new frmMensaje("Todos los campos son obligatorios", "Error de campos","");
 				return false;
 			}
 			if(!float.TryParse(txtPrecio.Text,out i))
 			{
-				MessageBox.Show("Añada un precio válido", "Error en Precio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				frmMensaje mensaje = new frmMensaje("Añada un precio válido", "Error en Precio", "");
 				return false;
 			}
 			
@@ -134,12 +135,12 @@ namespace Bendiciones
 				if (estadoObjCur == Estado.Nuevo)
 				{
 					Program.dbController.insertarCurso(curso);
-					MessageBox.Show("Curso Registrado exitosamente", "Mensaje Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					frmMensaje mensaje = new frmMensaje("Curso Registrado exitosamente", "Mensaje Confirmacion", "");
 				}
 				else if (estadoObjCur == Estado.Modificar)
 				{
 					Program.dbController.actualizarCurso(curso);
-					MessageBox.Show("Se han actualizado los datos", "Mensaje Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					frmMensaje mensaje = new frmMensaje("Se han actualizado los datos", "Mensaje Confirmacion", "");
 				}
 				limpiarComponentes();
 				estadoComponentes(Estado.Inicial);

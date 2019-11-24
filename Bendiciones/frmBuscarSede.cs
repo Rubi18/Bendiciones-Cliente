@@ -43,7 +43,7 @@ namespace Bendiciones
 		{
 			sedeSeleccionada = (Service.sede)dgvSedes.CurrentRow.DataBoundItem;
 			Program.dbController.eliminarSede(sedeSeleccionada.idSede);
-			MessageBox.Show("Se ha eliminado correctamente", "Mensaje Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			frmMensaje mensaje = new frmMensaje("Se ha eliminado correctamente", "Mensaje Confirmacion", "");
 			this.Close();
 		}
 	}

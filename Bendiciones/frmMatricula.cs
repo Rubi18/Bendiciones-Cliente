@@ -97,7 +97,7 @@ namespace Bendiciones
             }
             else
             {
-                MessageBox.Show("Seleecione un Cliente","Error de Cliente",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                frmMensaje mensaje = new frmMensaje("Seleecione un Cliente","Error de Cliente","");
                 return;
             }
         }
@@ -106,12 +106,12 @@ namespace Bendiciones
         {
             if(cliente == null)
             {
-                MessageBox.Show("Seleecione un Cliente", "Error de Cliente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                frmMensaje mensaje = new frmMensaje("Seleecione un Cliente", "Error de Cliente", "");
                 return false;
             }
             if (dgvMatriculas.RowCount == 0)
             {
-                MessageBox.Show("Agregue un curso", "Error de Matricula", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                frmMensaje mensaje = new frmMensaje("Agregue un curso", "Error de Matricula", "");
                 return false;
             }
             return true;
@@ -132,7 +132,7 @@ namespace Bendiciones
                     }
 
                     Program.dbController.insertarMatricula(m);
-                    MessageBox.Show("Matrícula Registrada exitosamente", "Mensaje Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    frmMensaje mensaje = new frmMensaje("Matrícula Registrada exitosamente", "Mensaje Confirmación", "");
 
 
                 }

@@ -34,17 +34,17 @@ namespace Bendiciones
 			int i;
 			if(txtTelefono.Text.Equals("") || txtDireccion.Text.Equals("") || txtDistrito.Text.Equals(""))
 			{
-				MessageBox.Show("Todos los campos son obligatorios", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				frmMensaje mensaje = new frmMensaje("Todos los campos son obligatorios", "", "");
 				return false;
 			}
 			if (!int.TryParse(txtTelefono.Text, out i))
 			{
-				MessageBox.Show("Telefono debe ser numerico", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				frmMensaje mensaje = new frmMensaje("Telefono debe ser numerico", "", "");
 				return false;
 			}
 			if (txtTelefono.Text.Length < 7)
 			{
-				MessageBox.Show("Tamaño minimo de 7 numeros en el campo Telefono", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				frmMensaje mensaje = new frmMensaje("Tamaño minimo de 7 numeros en el campo Telefono", "", "");
 				return false;
 			}
 			return true;
@@ -116,7 +116,7 @@ namespace Bendiciones
 				if (estadoObjSede == Estado.Nuevo)
 				{
 					Program.dbController.insertarSede(sede);
-					MessageBox.Show("Sede Registrada exitosamente", "Mensaje Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					frmMensaje mensaje = new frmMensaje("Sede Registrada exitosamente", "Mensaje Confirmacion", "");
 					txtDistrito.Text = "";
 					txtDireccion.Text = "";
 					txtTelefono.Text = "";
@@ -124,7 +124,7 @@ namespace Bendiciones
 				else if (estadoObjSede == Estado.Modificar)
 				{
 					Program.dbController.actualizarSede(sede);
-					MessageBox.Show("Se han actualizado los datos", "Mensaje Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					frmMensaje mensaje = new frmMensaje("Se han actualizado los datos", "Mensaje Confirmacion", "");
 				}
 				limpiarComponentes();
 				estadoComponentes(Estado.Inicial);

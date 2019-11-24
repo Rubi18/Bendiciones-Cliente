@@ -35,22 +35,22 @@ namespace Bendiciones
 
 			if (cliente == null || servMat == null ||txtAbonar.Text.Equals("") || cboFormaPago.SelectedIndex == -1)
 			{
-				MessageBox.Show("Todos los campos son oligatorios", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				frmMensaje mensaje = new frmMensaje("Todos los campos son oligatorios", "", "");
 				return false;
 			}
 			if (!float.TryParse(txtAbonar.Text, out i))
 			{
-				MessageBox.Show("Ingrese una cantidad numerica valida", "Error de Abonar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				frmMensaje mensaje = new frmMensaje("Ingrese una cantidad numerica valida", "Error de Abonar", "");
 				return false;
 			}
 			if (float.Parse(txtAbonar.Text) < 0)
 			{
-				MessageBox.Show("Ingrese una cantidad numerica positiva", "Error de Abonar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				frmMensaje mensaje = new frmMensaje("Ingrese una cantidad numerica positiva", "Error de Abonar", "");
 				return false;
 			}
 			if (float.Parse(txtAbonar.Text)==0)
 			{
-				MessageBox.Show("No es posible abonar 0 soles", "Error de Abonar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				frmMensaje mensaje = new frmMensaje("No es posible abonar 0 soles", "Error de Abonar", "");
 				return false;
 			}
 			
@@ -81,8 +81,10 @@ namespace Bendiciones
 				}
 			}
 			else
-				MessageBox.Show("Seleccione un Cliente","",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
-            
+			{
+				frmMensaje mensaje = new frmMensaje("Seleccione un Cliente", "", "");
+			}
+			
         }
 
         private void btnAbonar_Click(object sender, EventArgs e)
@@ -98,7 +100,7 @@ namespace Bendiciones
                 servMat.saldo = servMat.saldo - c.monto;
                 Program.dbController.actualizarMatricula(servMat);
                 Program.dbController.insertarCuota(c, servMat.idMatricula);
-                MessageBox.Show("Cuota Registrada exitosamente", "Mensaje Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmMensaje mensaje = new frmMensaje("Cuota Registrada exitosamente", "Mensaje Confirmación", "");
 			}
 			
 		}

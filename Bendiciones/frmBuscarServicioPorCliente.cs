@@ -53,7 +53,7 @@ namespace Bendiciones
             else
             {
 
-                MessageBox.Show("El cliente no tiene servicios asociados", "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                frmMensaje mensaje = new frmMensaje("El cliente no tiene servicios asociados", "Mensaje de advertencia", "");
                 this.DialogResult = DialogResult.OK;
                 this.Hide();
                 

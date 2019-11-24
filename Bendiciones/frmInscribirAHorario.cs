@@ -150,7 +150,7 @@ namespace Bendiciones
 
 
                 Program.dbController.registrarClienteEnHorario(a);
-                MessageBox.Show("Cliente registrado en horario", "Mensaje Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                frmMensaje mensaje = new frmMensaje("Cliente registrado en horario", "Mensaje Confirmación", "");
             }
             
         }

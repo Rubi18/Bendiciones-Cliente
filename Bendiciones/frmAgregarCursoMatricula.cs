@@ -48,17 +48,17 @@ namespace Bendiciones
             float i;
             if (cur == null)
             {
-                MessageBox.Show("No se ha seleciconado un servicio","Error de Servicio",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                frmMensaje mensaje = new frmMensaje("No se ha seleciconado un servicio","Error de Servicio","");
                 return false;
             }
             if (cboFormaPago.SelectedIndex == -1)
             {
-                MessageBox.Show("No se ha seleciconado una forma de pago", "Error de Forma de Pago", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                frmMensaje mensaje = new frmMensaje("No se ha seleciconado una forma de pago", "Error de Forma de Pago", "");
                 return false;
             }
             if(!float.TryParse(txtAbonar.Text,out i))
             {
-                MessageBox.Show("Ingrese una cantidad valida", "Error al Abonar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                frmMensaje mensaje = new frmMensaje("Ingrese una cantidad valida", "Error al Abonar", "");
                 return false;
             }
             return true;
@@ -164,7 +164,7 @@ namespace Bendiciones
                     float abono = float.Parse(txtAbonar.Text);
                     if (total < abono)
                     {
-                        MessageBox.Show("Monto máximo a abonar: " + total.ToString("0.0"), "Mensaje de advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        frmMensaje mensaje = new frmMensaje("Monto máximo a abonar: " + total.ToString("0.0"), "Mensaje de advertencia", "");
                         txtAbonar.Text = txtTotal.Text;
                     }
                     else
@@ -175,7 +175,7 @@ namespace Bendiciones
             }
             else
             {
-                MessageBox.Show("Ingrese una cantidad valida", "Error al Abonar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                frmMensaje mensaje = new frmMensaje("Ingrese una cantidad valida", "Error al Abonar", "");
             }
             
         }

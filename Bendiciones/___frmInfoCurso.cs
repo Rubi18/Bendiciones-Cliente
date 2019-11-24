@@ -104,8 +104,8 @@ namespace Bendiciones
             btnGuardar.Enabled = false;
             btnModificar.Text = "Modificar";
 
-            frmMensaje msg = new frmMensaje();
-            msg.ventanaMensaje("Cambios registrados");
+            //frmMensaje msg = new frmMensaje();
+            //msg.ventanaMensaje("Cambios registrados");
         }
 
         private void button1_Click(object sender, EventArgs e)

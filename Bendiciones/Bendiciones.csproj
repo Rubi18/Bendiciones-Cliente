@@ -188,12 +188,6 @@
     <Compile Include="MensajeOK.Designer.cs">
       <DependentUpon>MensajeOK.cs</DependentUpon>
     </Compile>
-    <Compile Include="___frmAsistencia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="___frmAsistencia.Designer.cs">
-      <DependentUpon>___frmAsistencia.cs</DependentUpon>
-    </Compile>
     <Compile Include="Estado.cs" />
     <Compile Include="frmBuscarCliente.cs">
       <SubType>Form</SubType>
@@ -371,9 +365,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MensajeOK.resx">
       <DependentUpon>MensajeOK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="___frmAsistencia.resx">
-      <DependentUpon>___frmAsistencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBuscarCliente.resx">
       <DependentUpon>frmBuscarCliente.cs</DependentUpon>

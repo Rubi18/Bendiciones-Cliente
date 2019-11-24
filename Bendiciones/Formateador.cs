@@ -451,6 +451,28 @@ namespace Bendiciones
             btnCancelar.Left = btnModificar.Left + btnW + btnGap;
 
         }
+		public void formMensaje(Panel pnlTitulo, Panel pnlMensaje, Label lblTitulo, Label lblMensaje,Button btnOk, Button btnCancel,string tipo)
+		{
+			formatearBotonNaranja(btnOk);
+			formatearBotonNaranja(btnCancel);
+			if (tipo.Equals("Confirmar"))
+				pnlTitulo.BackColor = colores.Naranja;
+			else
+				pnlTitulo.BackColor = colores.Amarillo;
+			pnlMensaje.BackColor = colores.Blanco;
+
+			lblTitulo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			lblTitulo.Top = (pnlTitulo.Height - lblTitulo.Height) / 2;
+			lblTitulo.Left = pnlTitulo.Left + btnGap;
+
+			lblMensaje.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			lblMensaje.Top = (pnlMensaje.Height - lblMensaje.Height) / 2 - 2*btnGap;
+			lblMensaje.Left = pnlMensaje.Left + btnGap;
+
+			btnCancel.Top = btnOk.Top = pnlMensaje.Top + pnlMensaje.Height - 2*btnH - btnGap;
+			btnOk.Left = pnlMensaje.Left + pnlMensaje.Width - 3 * btnGap - 2 * btnW;
+			btnCancel.Left = btnOk.Left + btnOk.Width + btnGap;
+		}
     }
 
 }

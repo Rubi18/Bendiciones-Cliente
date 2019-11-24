@@ -63,7 +63,7 @@ namespace Bendiciones
         {
             if (curso == null)
             {
-                MessageBox.Show("Seleccione un curso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                frmMensaje mensaje = new frmMensaje("Seleccione un curso", "Error", "");
                 return;
             }
             frmGestionarHorario formGestionarHorario = new frmGestionarHorario();
@@ -101,7 +101,7 @@ namespace Bendiciones
                 Console.WriteLine(h.fecha.ToShortDateString());
                 Program.dbController.insertarHorario(h, curso.id_servicio);
             }
-            MessageBox.Show("Horarios registrados", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            frmMensaje mensaje = new frmMensaje("Horarios registrados", "Mensaje de confirmación", "");
         }
 
         private void dgvHorarios_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

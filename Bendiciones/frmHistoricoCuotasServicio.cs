@@ -90,7 +90,10 @@ namespace Bendiciones
 					
 			}
 			else
-				MessageBox.Show("Seleccione un Cliente", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			{
+				frmMensaje mensaje = new frmMensaje("Seleccione un Cliente", "", "");
+			}
+				
 
 		}
     }

@@ -12,26 +12,26 @@ namespace Bendiciones
 {
     public partial class frmMensaje : Form
     {
-        public frmMensaje()
+        public frmMensaje(string mensaje, string titulo,string tipo)
         {
             InitializeComponent();
-            Paleta paleta = new Paleta();
+			lblTitulo.Text = titulo;
+			lblMensaje.Text = mensaje;
+			Formateador f = new Formateador();
+			f.formMensaje(pnlTitulo,pnlMensaje,lblTitulo,lblMensaje,btnOk,btnCancelar,tipo);
+			this.StartPosition = FormStartPosition.CenterScreen;
+			this.Show();
 
-            this.BackColor = paleta.Amarillo;
-            btnOk.ForeColor = paleta.Blanco;
-            btnOk.BackColor = paleta.Naranja;
         }
 
         public void ventanaMensaje(String mensaje) {
-            lblMsg.Text = mensaje;
-            lblMsg.Left = (this.Width - lblMsg.Width) / 2;
-            this.Visible = true;
+
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            this.Close();
+			this.DialogResult = DialogResult.OK;
+			this.Close();
         }
     }
 }
