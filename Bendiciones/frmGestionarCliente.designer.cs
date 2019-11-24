@@ -199,7 +199,7 @@
 			// 
 			this.lblCodigo.AutoSize = true;
 			this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblCodigo.Location = new System.Drawing.Point(782, 25);
+			this.lblCodigo.Location = new System.Drawing.Point(786, 25);
 			this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblCodigo.Name = "lblCodigo";
 			this.lblCodigo.Size = new System.Drawing.Size(92, 29);
@@ -232,9 +232,9 @@
 			this.lblNombre.Location = new System.Drawing.Point(119, 25);
 			this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.lblNombre.Name = "lblNombre";
-			this.lblNombre.Size = new System.Drawing.Size(101, 29);
+			this.lblNombre.Size = new System.Drawing.Size(117, 29);
 			this.lblNombre.TabIndex = 17;
-			this.lblNombre.Text = "Nombre";
+			this.lblNombre.Text = "Nombre*:";
 			// 
 			// tabTipo
 			// 
@@ -294,6 +294,7 @@
 			// 
 			this.txtNombrePareja.Location = new System.Drawing.Point(379, 59);
 			this.txtNombrePareja.Margin = new System.Windows.Forms.Padding(4);
+			this.txtNombrePareja.MaxLength = 150;
 			this.txtNombrePareja.Name = "txtNombrePareja";
 			this.txtNombrePareja.Size = new System.Drawing.Size(201, 22);
 			this.txtNombrePareja.TabIndex = 30;
@@ -322,6 +323,7 @@
 			// 
 			this.txtDNIPareja.Location = new System.Drawing.Point(379, 23);
 			this.txtDNIPareja.Margin = new System.Windows.Forms.Padding(4);
+			this.txtDNIPareja.MaxLength = 8;
 			this.txtDNIPareja.Name = "txtDNIPareja";
 			this.txtDNIPareja.Size = new System.Drawing.Size(201, 22);
 			this.txtDNIPareja.TabIndex = 23;
@@ -472,8 +474,10 @@
 			// 
 			this.txtObservaciones.Location = new System.Drawing.Point(83, 201);
 			this.txtObservaciones.Margin = new System.Windows.Forms.Padding(4);
+			this.txtObservaciones.MaxLength = 200;
+			this.txtObservaciones.Multiline = true;
 			this.txtObservaciones.Name = "txtObservaciones";
-			this.txtObservaciones.Size = new System.Drawing.Size(709, 22);
+			this.txtObservaciones.Size = new System.Drawing.Size(709, 78);
 			this.txtObservaciones.TabIndex = 32;
 			// 
 			// label15
@@ -490,6 +494,11 @@
 			// 
 			this.udNumEmbarazos.Location = new System.Drawing.Point(229, 68);
 			this.udNumEmbarazos.Margin = new System.Windows.Forms.Padding(4);
+			this.udNumEmbarazos.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
 			this.udNumEmbarazos.Name = "udNumEmbarazos";
 			this.udNumEmbarazos.Size = new System.Drawing.Size(116, 22);
 			this.udNumEmbarazos.TabIndex = 47;
@@ -498,6 +507,11 @@
 			// 
 			this.udNumPartos.Location = new System.Drawing.Point(229, 34);
 			this.udNumPartos.Margin = new System.Windows.Forms.Padding(4);
+			this.udNumPartos.Maximum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
 			this.udNumPartos.Name = "udNumPartos";
 			this.udNumPartos.Size = new System.Drawing.Size(116, 22);
 			this.udNumPartos.TabIndex = 46;
@@ -672,7 +686,7 @@
 			this.btnQuitarContacto.FlatAppearance.BorderSize = 0;
 			this.btnQuitarContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnQuitarContacto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnQuitarContacto.Location = new System.Drawing.Point(699, 89);
+			this.btnQuitarContacto.Location = new System.Drawing.Point(705, 89);
 			this.btnQuitarContacto.Margin = new System.Windows.Forms.Padding(4);
 			this.btnQuitarContacto.Name = "btnQuitarContacto";
 			this.btnQuitarContacto.Size = new System.Drawing.Size(40, 25);
@@ -686,7 +700,7 @@
 			this.btnAddContacto.FlatAppearance.BorderSize = 0;
 			this.btnAddContacto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
 			this.btnAddContacto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAddContacto.Location = new System.Drawing.Point(767, 89);
+			this.btnAddContacto.Location = new System.Drawing.Point(764, 89);
 			this.btnAddContacto.Margin = new System.Windows.Forms.Padding(4);
 			this.btnAddContacto.Name = "btnAddContacto";
 			this.btnAddContacto.Size = new System.Drawing.Size(40, 25);
@@ -737,7 +751,7 @@
 			// label10
 			// 
 			this.label10.AutoSize = true;
-			this.label10.Location = new System.Drawing.Point(444, 42);
+			this.label10.Location = new System.Drawing.Point(483, 34);
 			this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(137, 17);
@@ -746,8 +760,9 @@
 			// 
 			// txtTelefonoEmergencia
 			// 
-			this.txtTelefonoEmergencia.Location = new System.Drawing.Point(625, 38);
+			this.txtTelefonoEmergencia.Location = new System.Drawing.Point(628, 31);
 			this.txtTelefonoEmergencia.Margin = new System.Windows.Forms.Padding(4);
+			this.txtTelefonoEmergencia.MaxLength = 9;
 			this.txtTelefonoEmergencia.Name = "txtTelefonoEmergencia";
 			this.txtTelefonoEmergencia.Size = new System.Drawing.Size(179, 22);
 			this.txtTelefonoEmergencia.TabIndex = 32;
@@ -756,6 +771,7 @@
 			// 
 			this.txtNombreEmergencia.Location = new System.Drawing.Point(99, 33);
 			this.txtNombreEmergencia.Margin = new System.Windows.Forms.Padding(4);
+			this.txtNombreEmergencia.MaxLength = 15;
 			this.txtNombreEmergencia.Name = "txtNombreEmergencia";
 			this.txtNombreEmergencia.Size = new System.Drawing.Size(325, 22);
 			this.txtNombreEmergencia.TabIndex = 31;
@@ -779,6 +795,7 @@
 			// 
 			this.txtNumAseguradora.Location = new System.Drawing.Point(209, 64);
 			this.txtNumAseguradora.Margin = new System.Windows.Forms.Padding(4);
+			this.txtNumAseguradora.MaxLength = 8;
 			this.txtNumAseguradora.Name = "txtNumAseguradora";
 			this.txtNumAseguradora.Size = new System.Drawing.Size(151, 22);
 			this.txtNumAseguradora.TabIndex = 16;
@@ -807,6 +824,7 @@
 			// 
 			this.txtAseguradora.Location = new System.Drawing.Point(209, 32);
 			this.txtAseguradora.Margin = new System.Windows.Forms.Padding(4);
+			this.txtAseguradora.MaxLength = 150;
 			this.txtAseguradora.Name = "txtAseguradora";
 			this.txtAseguradora.Size = new System.Drawing.Size(151, 22);
 			this.txtAseguradora.TabIndex = 12;
@@ -873,8 +891,9 @@
 			// 
 			// txtCorreo
 			// 
-			this.txtCorreo.Location = new System.Drawing.Point(175, 57);
+			this.txtCorreo.Location = new System.Drawing.Point(173, 57);
 			this.txtCorreo.Margin = new System.Windows.Forms.Padding(4);
+			this.txtCorreo.MaxLength = 150;
 			this.txtCorreo.Name = "txtCorreo";
 			this.txtCorreo.Size = new System.Drawing.Size(201, 22);
 			this.txtCorreo.TabIndex = 4;
@@ -883,6 +902,7 @@
 			// 
 			this.txtTelef.Location = new System.Drawing.Point(173, 87);
 			this.txtTelef.Margin = new System.Windows.Forms.Padding(4);
+			this.txtTelef.MaxLength = 9;
 			this.txtTelef.Name = "txtTelef";
 			this.txtTelef.Size = new System.Drawing.Size(201, 22);
 			this.txtTelef.TabIndex = 6;
@@ -891,6 +911,7 @@
 			// 
 			this.txtDNI.Location = new System.Drawing.Point(173, 25);
 			this.txtDNI.Margin = new System.Windows.Forms.Padding(4);
+			this.txtDNI.MaxLength = 8;
 			this.txtDNI.Name = "txtDNI";
 			this.txtDNI.Size = new System.Drawing.Size(201, 22);
 			this.txtDNI.TabIndex = 9;
@@ -920,8 +941,9 @@
 			// txtNombreCliente
 			// 
 			this.txtNombreCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtNombreCliente.Location = new System.Drawing.Point(240, 20);
+			this.txtNombreCliente.Location = new System.Drawing.Point(244, 20);
 			this.txtNombreCliente.Margin = new System.Windows.Forms.Padding(4);
+			this.txtNombreCliente.MaxLength = 150;
 			this.txtNombreCliente.Name = "txtNombreCliente";
 			this.txtNombreCliente.Size = new System.Drawing.Size(534, 37);
 			this.txtNombreCliente.TabIndex = 49;

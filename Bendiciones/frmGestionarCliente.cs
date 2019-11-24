@@ -230,8 +230,70 @@ namespace Bendiciones
 			dgvGestaciones.RowCount = 0;
 		}
 		#endregion
+		public bool IsValidEmail(string email)
+		{
+			try
+			{
+				var addr = new System.Net.Mail.MailAddress(email);
+				return addr.Address == email;
+			}
+			catch
+			{
+				return false;
+			}
+		}
+
 		public bool verificarCampos()
 		{
+			int i;
+			if (txtNombreCliente.Text.Equals("") || txtDNI.Text.Equals("") || txtTelef.Equals("") ||
+				txtCorreo.Text.Equals("") || cboSedes.SelectedIndex==-1)
+			{
+				frmMensaje mensaje = new frmMensaje("Complete los campos obligatorios","Error de Campos","");
+				return false;
+			}
+
+			if(!int.TryParse(txtTelef.Text,out i))
+			{
+				frmMensaje mensaje = new frmMensaje("Campo TELEFONO debe ser numerico", "Error de TELEFONO", "");
+				return false;
+			}
+
+			if (!IsValidEmail(txtCorreo.Text))
+			{
+				frmMensaje mensaje = new frmMensaje("Ingrese un correo electronico valido", "", "");
+				return false;
+			}
+
+			if (rbFemenino.Checked == false && rbMasculino.Checked == false)
+			{
+				frmMensaje mensaje = new frmMensaje("Campo SEXO(cliente o pareja) debe ser seleccionado", "Error de SEXO", "");
+				return false;
+			}
+
+			if ((!txtAseguradora.Text.Equals("") && txtNumAseguradora.Text.Equals(""))|| (txtAseguradora.Text.Equals("") && !txtNumAseguradora.Text.Equals("")))
+			{
+				frmMensaje mensaje = new frmMensaje("Completar Campos de Aseguradora", "Error de ASEGURADORA", "");
+				return false;
+			}
+
+			if (!int.TryParse(txtNumAseguradora.Text,out i))
+			{
+				frmMensaje mensaje = new frmMensaje("Campo Num. ASEGURADORA debe ser numerico", "Error de ASEGURADORA", "");
+				return false;
+			}
+
+			if ((!txtDNIPareja.Text.Equals("") && txtNombrePareja.Text.Equals("")) || (txtDNIPareja.Text.Equals("") && !txtNombrePareja.Text.Equals("")))
+			{
+				frmMensaje mensaje = new frmMensaje("Completar Campos de Pareja", "Error de PAREJA", "");
+				return false;
+			}
+
+			if (rbFemeninoPareja.Checked == false && rbMasculinoPareja.Checked == false)
+			{
+				frmMensaje mensaje = new frmMensaje("Campo SEXO(cliente o pareja) debe ser seleccionado", "Error de SEXO", "");
+				return false;
+			}
 			return true;
 		}
 
@@ -312,98 +374,100 @@ namespace Bendiciones
 
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
-
-			if (tabTipo.SelectedTab == tabApoderado)
+			if (verificarCampos())
 			{
-				apoderado.nombre = txtNombreCliente.Text;
-				apoderado.dni = txtDNI.Text;
-				apoderado.email = txtCorreo.Text;
-				apoderado.telefono = txtTelef.Text;
-
-				apoderado.aseguradora = txtAseguradora.Text;
-				apoderado.numSeguro = txtNumAseguradora.Text;
-
-				if (rbFemenino.Checked == true)
-					apoderado.sexo = 'F';
-				else
-					apoderado.sexo = 'M';
-				apoderado.contactos = contactos.ToArray();
-				apoderado.bebes = bebes.ToArray();
-                if (estadoObjCliente == Estado.Nuevo)
-                {
-                    string cod = Program.dbController.insertarApoderado(apoderado,((Service.sede)cboSedes.SelectedItem).distrito);
-					Console.WriteLine(cod);
-                    frmMensaje mensaje = new frmMensaje("Se ha registrado un nuevo Apoderado", "Mensaje de confirmación", "Confirmar");
-                }
-                else
-                {
-                    Program.dbController.actualizarApoderado(apoderado);
-                    frmMensaje mensaje = new frmMensaje("Se han actualizado los datos", "Mensaje de confirmación", "Confirmar");
-                }
-			}
-			else
-			{
-				gestante.nombre = txtNombreCliente.Text;
-				gestante.dni = txtDNI.Text;
-				gestante.email = txtCorreo.Text;
-				gestante.telefono = txtTelef.Text;
-
-				gestante.aseguradora = txtAseguradora.Text;
-				gestante.numSeguro = txtNumAseguradora.Text;
-
-				if (rbFemenino.Checked == true)
-					gestante.sexo = 'F';
-				else
-					gestante.sexo = 'M';
-				gestante.contactos = contactos.ToArray();
-				gestante.numPartos = (int)udNumPartos.Value;
-				gestante.cantEmbar = (int)udNumEmbarazos.Value;
-				gestante.fechaNaci = dtpFechaNacimiento.Value;
-				gestante.fechaNaciSpecified = true;
-
-				//condiciones
-				for (int i = 0; i < dgvCondiciones.Rows.Count; i++)
+				if (tabTipo.SelectedTab == tabApoderado)
 				{
-					if (dgvCondiciones.Rows[i].Cells[1].Value == null)
-					{ }
-					else if ((bool)dgvCondiciones.Rows[i].Cells[1].Value == true)
+					apoderado.nombre = txtNombreCliente.Text;
+					apoderado.dni = txtDNI.Text;
+					apoderado.email = txtCorreo.Text;
+					apoderado.telefono = txtTelef.Text;
+					
+					apoderado.aseguradora = txtAseguradora.Text;
+					apoderado.numSeguro = txtNumAseguradora.Text;
+
+					if (rbFemenino.Checked == true)
+						apoderado.sexo = 'F';
+					else
+						apoderado.sexo = 'M';
+					apoderado.contactos = contactos.ToArray();
+					apoderado.bebes = bebes.ToArray();
+					if (estadoObjCliente == Estado.Nuevo)
 					{
-						Service.condicionMedica cond = new Service.condicionMedica();
-						cond = (Service.condicionMedica)dgvCondiciones.Rows[i].DataBoundItem;
-						condiciones.Add(cond);
+						string cod = Program.dbController.insertarApoderado(apoderado, ((Service.sede)cboSedes.SelectedItem).distrito);
+						Console.WriteLine(cod);
+						frmMensaje mensaje = new frmMensaje("Se ha registrado un nuevo Apoderado", "Mensaje de confirmación", "Confirmar");
+					}
+					else
+					{
+						Program.dbController.actualizarApoderado(apoderado);
+						frmMensaje mensaje = new frmMensaje("Se han actualizado los datos", "Mensaje de confirmación", "Confirmar");
 					}
 				}
-				gestante.condMedicas = condiciones.ToArray<Service.condicionMedica>();
-
-				//si hay pareja
-				if (!txtDNIPareja.Text.Equals(""))
+				else
 				{
-					Service.pareja pareja = new Service.pareja();
-					pareja.nombre = txtNombrePareja.Text;
-					pareja.dni = txtDNIPareja.Text;
-					if (rbFemeninoPareja.Checked == true)
-						pareja.sexo = 'F';
+					gestante.nombre = txtNombreCliente.Text;
+					gestante.dni = txtDNI.Text;
+					gestante.email = txtCorreo.Text;
+					gestante.telefono = txtTelef.Text;
+
+					gestante.aseguradora = txtAseguradora.Text;
+					gestante.numSeguro = txtNumAseguradora.Text;
+
+					if (rbFemenino.Checked == true)
+						gestante.sexo = 'F';
 					else
-						pareja.sexo = 'M';
-					gestante.pareja = pareja;
+						gestante.sexo = 'M';
+					gestante.contactos = contactos.ToArray();
+					gestante.numPartos = (int)udNumPartos.Value;
+					gestante.cantEmbar = (int)udNumEmbarazos.Value;
+					gestante.fechaNaci = dtpFechaNacimiento.Value;
+					gestante.fechaNaciSpecified = true;
+
+					//condiciones
+					for (int i = 0; i < dgvCondiciones.Rows.Count; i++)
+					{
+						if (dgvCondiciones.Rows[i].Cells[1].Value == null)
+						{ }
+						else if ((bool)dgvCondiciones.Rows[i].Cells[1].Value == true)
+						{
+							Service.condicionMedica cond = new Service.condicionMedica();
+							cond = (Service.condicionMedica)dgvCondiciones.Rows[i].DataBoundItem;
+							condiciones.Add(cond);
+						}
+					}
+					gestante.condMedicas = condiciones.ToArray<Service.condicionMedica>();
+
+					//si hay pareja
+					if (!txtDNIPareja.Text.Equals(""))
+					{
+						Service.pareja pareja = new Service.pareja();
+						pareja.nombre = txtNombrePareja.Text;
+						pareja.dni = txtDNIPareja.Text;
+						if (rbFemeninoPareja.Checked == true)
+							pareja.sexo = 'F';
+						else
+							pareja.sexo = 'M';
+						gestante.pareja = pareja;
+					}
+
+					gestante.gestaciones = gestaciones.ToArray();
+					gestante.observMedicas = txtObservaciones.Text;
+
+					if (estadoObjCliente == Estado.Nuevo)
+					{
+						string cod = Program.dbController.insertarGestante(gestante, ((Service.sede)cboSedes.SelectedItem).distrito);
+						frmMensaje mensaje = new frmMensaje("Cliente apoderado registrado", "Mensaje de confirmación", "");
+					}
+					else
+					{
+						Program.dbController.actualizarGestante(gestante);
+						frmMensaje mensaje = new frmMensaje("Cliente apoderado actualizado", "Mensaje de confirmación", "");
+					}
 				}
-
-				gestante.gestaciones = gestaciones.ToArray();
-				gestante.observMedicas = txtObservaciones.Text;
-
-                if (estadoObjCliente == Estado.Nuevo)
-                {
-                    string cod = Program.dbController.insertarGestante(gestante, ((Service.sede)cboSedes.SelectedItem).distrito);
-                    frmMensaje mensaje = new frmMensaje("Cliente apoderado registrado", "Mensaje de confirmación", "");
-                }
-                else
-                {
-                    Program.dbController.actualizarGestante(gestante);
-                    frmMensaje mensaje = new frmMensaje("Cliente apoderado actualizado", "Mensaje de confirmación", "");
-                }
-            }
-			estadoComponentes(Estado.Inicial);
-			limpiarComponentes();
+				estadoComponentes(Estado.Inicial);
+				limpiarComponentes();
+			}
 		}
 
 		private void btnNuevo_Click(object sender, EventArgs e)
@@ -428,23 +492,31 @@ namespace Bendiciones
 		#region ContactosDeEmergencia
 		private void btnAddContacto_Click(object sender, EventArgs e)
 		{
-			Service.contactoEmergencia cont = new Service.contactoEmergencia();
-			cont.nombre = txtNombreEmergencia.Text;
-			cont.telefono = txtTelefonoEmergencia.Text;
-			
-			if (estadoObjCliente == Estado.Nuevo)
-				contactos.Add(cont);
+			int i;
+			if (int.TryParse(txtTelefonoEmergencia.Text, out i) && !txtNombrePareja.Text.Equals(""))
+			{
+				Service.contactoEmergencia cont = new Service.contactoEmergencia();
+				cont.nombre = txtNombreEmergencia.Text;
+				cont.telefono = txtTelefonoEmergencia.Text;
+
+				if (estadoObjCliente == Estado.Nuevo)
+					contactos.Add(cont);
+				else
+				{
+					contactos = new BindingList<Service.contactoEmergencia>();
+					foreach (Service.contactoEmergencia contacto in cliente.contactos)
+						contactos.Add(contacto);
+					contactos.Add(cont);
+				}
+				Object[] filaContacto = new Object[2];
+				filaContacto[0] = cont.nombre;
+				filaContacto[1] = cont.telefono;
+				dgvContactos.Rows.Add(filaContacto);
+			}
 			else
 			{
-				contactos = new BindingList<Service.contactoEmergencia>();
-				foreach (Service.contactoEmergencia contacto in cliente.contactos)
-					contactos.Add(contacto);
-				contactos.Add(cont);
-			}
-			Object[] filaContacto = new Object[2];
-			filaContacto[0] = cont.nombre;
-			filaContacto[1] = cont.telefono;
-			dgvContactos.Rows.Add(filaContacto);
+				frmMensaje mensaje = new frmMensaje("Ingrese datos del contacto de emergencia", "Error de CAMPOS", "");
+			}			
 		}
 
 		private void btnQuitarContacto_Click(object sender, EventArgs e)
