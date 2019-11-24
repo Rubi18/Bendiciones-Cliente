@@ -15,7 +15,6 @@ namespace Bendiciones
     {
         private Service.cliente clienteSeleccionado;
         private List<Service.cliente> clientes;
-        //private BindingList<Service.cliente> clientes;
         
         public cliente ClienteSeleccionado { get => clienteSeleccionado; set => clienteSeleccionado = value; }
 
@@ -23,39 +22,32 @@ namespace Bendiciones
         {
             InitializeComponent();
             dgvClientes.AutoGenerateColumns = false;
-
             Formateador f = new Formateador();
             f.iniFormFreddyBuscar(this, "Buscar Cliente", "Nombre o DNI:", txtNombre, dgvClientes, btnBuscar, btnSeleccionar, btnEliminar, false);
-            //clientes = new BindingList<Service.cliente>(Program.dbController.listarApoderadosPorNombreDNI(""));
-            clientes = Program.dbController.listarApoderadosPorNombreDNI("").ToList<Service.cliente>();
+			
+			//agregar gestantes y apoderados a la lista de clientes
+			clientes = Program.dbController.listarApoderadosPorNombreDNI("").ToList<Service.cliente>();
             foreach (Service.gestante g in Program.dbController.listarGestantePorNombreDNI(""))
-            {
                 clientes.Add((Service.cliente)g);
-            }
 
-
-            foreach (Service.apoderado a in Program.dbController.listarApoderadosPorNombreDNI(""))
+			//llenar data grid view
+            foreach (Service.apoderado apoderado in Program.dbController.listarApoderadosPorNombreDNI(""))
             {
                 Object[] fila = new Object[3];
-                fila[0] = a.dni;
-                fila[1] = a.nombre;
+                fila[0] = apoderado.dni;
+                fila[1] = apoderado.nombre;
                 fila[2] = "Apoderado";
                 dgvClientes.Rows.Add(fila);
-                //dgvClientes.Rows.Add(a);
             }
-            foreach (Service.gestante g in Program.dbController.listarGestantePorNombreDNI(""))
+            foreach (Service.gestante gestante in Program.dbController.listarGestantePorNombreDNI(""))
             {
                 Object[] fila = new Object[3];
-                fila[0] = g.dni;
-                fila[1] = g.nombre;
+                fila[0] = gestante.dni;
+                fila[1] = gestante.nombre;
                 fila[2] = "Gestante";
                 dgvClientes.Rows.Add(fila);
-                //dgvClientes.Rows.Add(g);
             }
-            
         }
-
-        
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -90,26 +82,7 @@ namespace Bendiciones
                     fila[2] = "Apoderado";
                 }
                 dgvClientes.Rows.Add(fila);
-                //dgvClientes.Rows.Add(a);
             }
-
-            // foreach (Service.apoderado a in Program.dbController.listarApoderadosPorNombreDNI(txtNombre.Text))
-            //{
-            //	Object[] fila = new Object[2];
-            //	fila[0] = a.dni;
-            //	fila[1] = a.nombre;
-            //	dgvClientes.Rows.Add(fila);
-            //	//dgvClientes.Rows.Add(a);
-            //}
-            //foreach (Service.gestante g in Program.dbController.listarGestantePorNombreDNI(txtNombre.Text))
-            //{
-            //	Object[] fila = new Object[2];
-            //	fila[0] = g.dni;
-            //	fila[1] = g.nombre;
-            //	dgvClientes.Rows.Add(fila);
-            //	//dgvClientes.Rows.Add(g);
-            //}
-
         }
 
 
@@ -125,24 +98,6 @@ namespace Bendiciones
                 clienteSeleccionado = clientes[dgvClientes.CurrentCell.RowIndex];
                 this.DialogResult = DialogResult.OK;
             }
-            //clienteSeleccionado = clientes[dgvClientes.CurrentCell.RowIndex];
-            //clienteSeleccionado = (Service.cliente)dgvClientes.CurrentRow.DataBoundItem;
-            //if (clienteSeleccionado != null)
-            //    clienteSeleccionado = clientes[dgvClientes.CurrentCell.RowIndex];
-            //this.DialogResult = DialogResult.OK;
-            //else
-            //{
-            //    frmMensaje mensaje = new frmMensaje("No se ha seleccionado un cliente", "Mensaje de advertencia", "");
-            //}
-        }
-
-        private void frmBuscarCliente_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvClientes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
             
         }
 
@@ -150,5 +105,11 @@ namespace Bendiciones
         {
 
         }
-    }
+
+		private void txtNombre_KeyDown(object sender, KeyEventArgs e)
+		{
+			if (e.KeyCode == Keys.Enter)
+				btnBuscar_Click(sender,e);
+		}
+	}
 }

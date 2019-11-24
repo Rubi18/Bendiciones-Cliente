@@ -12,11 +12,12 @@ namespace Bendiciones
 {
 	public partial class frmGestionarCliente : Form
 	{
-		private Service.cliente cliente;
-		private Service.apoderado apoderado;
-		private Service.gestante gestante;
-		private Service.gestacion gestacion;
-		private Service.contactoEmergencia contacto;
+		private Service.cliente cliente = new Service.cliente();
+		private Service.apoderado apoderado = new Service.apoderado();
+		private Service.gestante gestante = new Service.gestante();
+		private Service.gestacion gestacion = new Service.gestacion();
+		private Service.contactoEmergencia contacto = new Service.contactoEmergencia();
+
 		private BindingList<Service.contactoEmergencia> contactos = new BindingList<Service.contactoEmergencia>();
 		private BindingList<Service.bebe> bebes = new BindingList<Service.bebe>();
 		private BindingList<Service.gestacion> gestaciones = new BindingList<Service.gestacion>();
@@ -27,14 +28,20 @@ namespace Bendiciones
 		{
 			InitializeComponent();
 			Formateador f = new Formateador();
-			estadoObjCliente = Estado.Nuevo;
+			f.formatearBotonListar(btnAddContacto);
+			f.formatearBotonListar(btnQuitarContacto);
 			cliente = new Service.cliente();
             dgvCondiciones.AutoGenerateColumns = false;
-            f.iniFormFreddyGestionar(this, "Gestionar Cliente", pnlCtn, btnNuevo, btnBuscar, btnGuardar, btnModificar, btnCancelar, false);
-            estadoComponentes(Estado.Inicial);
+			dgvCondiciones.DataSource = Program.dbController.listarCondMedicasPorNombre("");
+			f.iniFormFreddyGestionar(this, "Gestionar Cliente", pnlCtn, btnNuevo, btnBuscar, btnGuardar, btnModificar, btnCancelar, false);
+			cboSedes.DataSource = new BindingList<Service.sede>(Program.dbController.listarSedes());
+			cboSedes.DisplayMember = "distrito";
+			cboSedes.ValueMember = "idSede";
+			estadoComponentes(Estado.Inicial);
+			limpiarComponentes();
         }
-
-        public void estadoComponentes(Estado estado)
+		#region Estados
+		public void estadoComponentes(Estado estado)
         {
             switch (estado)
             {
@@ -63,6 +70,13 @@ namespace Bendiciones
                     btnAgregarGestacion.Enabled = false;
                     btnSeleccionarBebe.Enabled = false;
                     btnAgregarBebe.Enabled = false;
+					cboSedes.Enabled = false;
+					dgvCondiciones.Enabled = false;
+					lblCodigo.Visible = false;
+					dgvContactos.Enabled = false;
+					dgvCondiciones.Enabled = false;
+					dgvBebes.Enabled = false;
+					dgvGestaciones.Enabled = false;
 
                     btnNuevo.Enabled = true;
                     btnGuardar.Enabled = false;
@@ -95,8 +109,15 @@ namespace Bendiciones
                     btnAgregarGestacion.Enabled = true;
                     btnSeleccionarBebe.Enabled = true;
                     btnAgregarBebe.Enabled = true;
+					cboSedes.Enabled = true;
+					dgvCondiciones.Enabled = true;
+					lblCodigo.Visible = false;
+					dgvContactos.Enabled = true;
+					dgvCondiciones.Enabled = true;
+					dgvBebes.Enabled = true;
+					dgvGestaciones.Enabled = true;
 
-                    btnNuevo.Enabled = false;
+					btnNuevo.Enabled = false;
                     btnGuardar.Enabled = true;
                     btnCancelar.Enabled = true;
                     btnBuscar.Enabled = false;
@@ -127,8 +148,15 @@ namespace Bendiciones
                     btnAgregarGestacion.Enabled = false;
                     btnSeleccionarBebe.Enabled = false;
                     btnAgregarBebe.Enabled = false;
+					cboSedes.Enabled = false;
+					dgvCondiciones.Enabled = false;
+					lblCodigo.Visible = true;
+					dgvContactos.Enabled = false;
+					dgvCondiciones.Enabled = false;
+					dgvBebes.Enabled = false;
+					dgvGestaciones.Enabled = false;
 
-                    btnNuevo.Enabled = false;
+					btnNuevo.Enabled = false;
                     btnModificar.Enabled = true;
                     btnBuscar.Enabled = true;
                     btnGuardar.Enabled = false;
@@ -159,8 +187,15 @@ namespace Bendiciones
                     btnAgregarGestacion.Enabled = true;
                     btnSeleccionarBebe.Enabled = true;
                     btnAgregarBebe.Enabled = true;
+					cboSedes.Enabled = true;
+					dgvCondiciones.Enabled = true;
+					lblCodigo.Visible = true;
+					dgvContactos.Enabled = true;
+					dgvCondiciones.Enabled = true;
+					dgvBebes.Enabled = true;
+					dgvGestaciones.Enabled = true;
 
-                    btnNuevo.Enabled = false;
+					btnNuevo.Enabled = false;
                     btnGuardar.Enabled = true;
                     btnCancelar.Enabled = true;
                     btnBuscar.Enabled = false;
@@ -169,36 +204,45 @@ namespace Bendiciones
 
             }
         }
-		private void btnAgregarBebe_Click(object sender, EventArgs e)
+
+		public void limpiarComponentes()
 		{
-			frmGestionarBebe formGestionarBebe = new frmGestionarBebe();
-			//formGestionarBebe.Show();
-			if (formGestionarBebe.ShowDialog() == DialogResult.OK)
-			{
-				Service.bebe bebe;
-				bebe = formGestionarBebe.BebeSeleccionado;
-				bebes.Add(bebe);
-				Object[] filaBebe = new Object[4];
-				filaBebe[0] = bebe.dni;
-				filaBebe[1] = bebe.nombre;
-				filaBebe[2] = bebe.relacion;
-				filaBebe[3] = bebe.fechaNaci.ToShortDateString();
-				dgvBebes.Rows.Add(filaBebe);
-			}
+			txtNombreCliente.Text = "";
+			txtDNI.Text = "";
+			txtCorreo.Text = "";
+			txtTelef.Text = "";
+			rbFemenino.Checked = false;
+			rbMasculino.Checked = false;
+			txtAseguradora.Text = "";
+			txtNumAseguradora.Text = "";
+			cboSedes.SelectedIndex = -1;
+			txtNombreEmergencia.Text = "";
+			txtTelefonoEmergencia.Text = "";
+			dgvContactos.RowCount = 0;
+			dgvBebes.RowCount = 0;
+			udNumPartos.Value = 0;
+			udNumEmbarazos.Value = 0;
+			txtObservaciones.Text = "";
+			txtDNIPareja.Text = "";
+			txtNombrePareja.Text = "";
+			rbFemeninoPareja.Checked = false;
+			rbMasculino.Checked = false;
+			dgvGestaciones.RowCount = 0;
+		}
+		#endregion
+		public bool verificarCampos()
+		{
+			return true;
 		}
 
-		private void btnSeleccionarBebe_Click(object sender, EventArgs e)
-		{
-			frmBuscarBebe formBuscarBebe = new frmBuscarBebe();
-			formBuscarBebe.Show();
-		}
-
+		#region Botones
 		private void btnBuscar_Click(object sender, EventArgs e)
 		{
 			frmBuscarCliente formCliente = new frmBuscarCliente();
 			if (formCliente.ShowDialog() == DialogResult.OK)
 			{
 				cliente = formCliente.ClienteSeleccionado;
+				lblCodigo.Text = cliente.codigo;
 				txtNombreCliente.Text = cliente.nombre;
 				txtDNI.Text = cliente.dni;
 				txtCorreo.Text = cliente.email;
@@ -209,23 +253,37 @@ namespace Bendiciones
 					rbMasculino.Checked = true;
 				txtAseguradora.Text = cliente.aseguradora;
 				txtNumAseguradora.Text = cliente.numSeguro;
+
 				if (cliente.contactos != null)
 				{
-                    dgvContactos.AutoGenerateColumns = false;
-                    dgvContactos.DataSource = cliente.contactos;
+					foreach (Service.contactoEmergencia contacto in cliente.contactos)
+					{
+						Object[] filaContacto = new Object[2];
+						filaContacto[0] = contacto.nombre;
+						filaContacto[1] = contacto.telefono;
+						dgvContactos.Rows.Add(filaContacto);
+					}
 				}
 
 				if (cliente is Service.apoderado)
 				{
 					apoderado = (Service.apoderado)cliente;
+					tabTipo.SelectedTab = tabApoderado;
 					if (apoderado.bebes != null) {
-
-                        dgvBebes.AutoGenerateColumns = false;
-                        dgvBebes.DataSource = apoderado.bebes;
+						foreach(Service.bebe bebe in apoderado.bebes)
+						{
+							Object[] filaBebe = new Object[4];
+							filaBebe[0] = bebe.dni;
+							filaBebe[1] = bebe.nombre;
+							filaBebe[2] = bebe.relacion;
+							filaBebe[3] = bebe.fechaNaci.ToShortDateString();
+							dgvBebes.Rows.Add(filaBebe);
+						}   
                     }	
 				}
 				else
 				{
+					tabTipo.SelectedTab = tabGestante;
 					gestante = (Service.gestante)cliente;
 					udNumPartos.Value = gestante.numPartos;
 					udNumEmbarazos.Value = gestante.cantEmbar;
@@ -254,55 +312,56 @@ namespace Bendiciones
 
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
-			#region general
-			cliente.nombre = txtNombreCliente.Text;
-			cliente.dni = txtDNI.Text;
-			cliente.email = txtCorreo.Text;
-			cliente.telefono = txtTelef.Text;
 
-			cliente.aseguradora = txtAseguradora.Text;
-			cliente.numSeguro = txtNumAseguradora.Text;
-
-			if (rbFemenino.Checked == true)
-				cliente.sexo = 'F';
-			else
-				cliente.sexo = 'M';
-
-			List<Service.contactoEmergencia> contactos = new List<Service.contactoEmergencia>();
-			for (int i = 0; i < dgvGestaciones.RowCount; i++)
+			if (tabTipo.SelectedTab == tabApoderado)
 			{
-				contacto = (Service.contactoEmergencia)dgvContactos.Rows[i].DataBoundItem;
-				contactos.Add(contacto);
-			}
-			cliente.contactos = contactos.ToArray();
-			#endregion
-			if (tabTipo.SelectedTab.Text.Equals("Apoderado"))
-			{
-				Service.apoderado cliente = new Service.apoderado();
+				apoderado.nombre = txtNombreCliente.Text;
+				apoderado.dni = txtDNI.Text;
+				apoderado.email = txtCorreo.Text;
+				apoderado.telefono = txtTelef.Text;
 
-				//guarda su lista de bebes
-				cliente.bebes = bebes.ToArray();
+				apoderado.aseguradora = txtAseguradora.Text;
+				apoderado.numSeguro = txtNumAseguradora.Text;
+
+				if (rbFemenino.Checked == true)
+					apoderado.sexo = 'F';
+				else
+					apoderado.sexo = 'M';
+				apoderado.contactos = contactos.ToArray();
+				apoderado.bebes = bebes.ToArray();
                 if (estadoObjCliente == Estado.Nuevo)
                 {
-                    string cod = Program.dbController.insertarApoderado(cliente, "SEDE");
-                    frmMensaje mensaje = new frmMensaje("Cliente apoderado registrado", "Mensaje de confirmación", "Confirmar");
+                    string cod = Program.dbController.insertarApoderado(apoderado,((Service.sede)cboSedes.SelectedItem).distrito);
+					Console.WriteLine(cod);
+                    frmMensaje mensaje = new frmMensaje("Se ha registrado un nuevo Apoderado", "Mensaje de confirmación", "Confirmar");
                 }
                 else
                 {
-                    Program.dbController.actualizarApoderado(cliente);
-                    frmMensaje mensaje = new frmMensaje("Cliente apoderado actualizado", "Mensaje de confirmación", "Confirmar");
+                    Program.dbController.actualizarApoderado(apoderado);
+                    frmMensaje mensaje = new frmMensaje("Se han actualizado los datos", "Mensaje de confirmación", "Confirmar");
                 }
-				
 			}
 			else
 			{
-				Service.gestante cliente = new Service.gestante();
-				cliente.numPartos = (int)udNumPartos.Value;
-				cliente.cantEmbar = (int)udNumEmbarazos.Value;
-				cliente.fechaNaci = dtpFechaNacimiento.Value;
-				cliente.fechaNaciSpecified = true;
+				gestante.nombre = txtNombreCliente.Text;
+				gestante.dni = txtDNI.Text;
+				gestante.email = txtCorreo.Text;
+				gestante.telefono = txtTelef.Text;
+
+				gestante.aseguradora = txtAseguradora.Text;
+				gestante.numSeguro = txtNumAseguradora.Text;
+
+				if (rbFemenino.Checked == true)
+					gestante.sexo = 'F';
+				else
+					gestante.sexo = 'M';
+				gestante.contactos = contactos.ToArray();
+				gestante.numPartos = (int)udNumPartos.Value;
+				gestante.cantEmbar = (int)udNumEmbarazos.Value;
+				gestante.fechaNaci = dtpFechaNacimiento.Value;
+				gestante.fechaNaciSpecified = true;
+
 				//condiciones
-				List<Service.condicionMedica> condicionMedicas = new List<Service.condicionMedica>();
 				for (int i = 0; i < dgvCondiciones.Rows.Count; i++)
 				{
 					if (dgvCondiciones.Rows[i].Cells[1].Value == null)
@@ -311,10 +370,10 @@ namespace Bendiciones
 					{
 						Service.condicionMedica cond = new Service.condicionMedica();
 						cond = (Service.condicionMedica)dgvCondiciones.Rows[i].DataBoundItem;
-						condicionMedicas.Add(cond);
+						condiciones.Add(cond);
 					}
 				}
-				cliente.condMedicas = condicionMedicas.ToArray<Service.condicionMedica>();
+				gestante.condMedicas = condiciones.ToArray<Service.condicionMedica>();
 
 				//si hay pareja
 				if (!txtDNIPareja.Text.Equals(""))
@@ -326,50 +385,121 @@ namespace Bendiciones
 						pareja.sexo = 'F';
 					else
 						pareja.sexo = 'M';
-					cliente.pareja = pareja;
+					gestante.pareja = pareja;
 				}
 
-				//gestaciones
-				List<Service.gestacion> gestaciones = new List<Service.gestacion>();
-				for (int i = 0; i < dgvGestaciones.RowCount; i++)
-				{
-					gestacion = (Service.gestacion)dgvGestaciones.Rows[i].DataBoundItem;
-					gestaciones.Add(gestacion);
-				}
-				cliente.gestaciones = gestaciones.ToArray();
+				gestante.gestaciones = gestaciones.ToArray();
+				gestante.observMedicas = txtObservaciones.Text;
 
-				cliente.observMedicas = txtObservaciones.Text;
                 if (estadoObjCliente == Estado.Nuevo)
                 {
-                    string cod = Program.dbController.insertarGestante(cliente, "SEDE");
+                    string cod = Program.dbController.insertarGestante(gestante, ((Service.sede)cboSedes.SelectedItem).distrito);
                     frmMensaje mensaje = new frmMensaje("Cliente apoderado registrado", "Mensaje de confirmación", "");
                 }
                 else
                 {
-                    Program.dbController.actualizarGestante(cliente);
+                    Program.dbController.actualizarGestante(gestante);
                     frmMensaje mensaje = new frmMensaje("Cliente apoderado actualizado", "Mensaje de confirmación", "");
                 }
             }
+			estadoComponentes(Estado.Inicial);
+			limpiarComponentes();
 		}
-	 
 
-        private void btnAddContacto_Click(object sender, EventArgs e)
-        {
-            Service.contactoEmergencia contacto = new Service.contactoEmergencia();
-            contacto.nombre = txtNombreEmergencia.Text;
-            contacto.telefono = txtTelefonoEmergencia.Text;
+		private void btnNuevo_Click(object sender, EventArgs e)
+		{
+			estadoObjCliente = Estado.Nuevo;
+			estadoComponentes(Estado.Nuevo);
+		}
 
-            contactos.Add(contacto);
+		private void btnCancelar_Click(object sender, EventArgs e)
+		{
+			estadoComponentes(Estado.Inicial);
+			limpiarComponentes();
+		}
 
-            Object[] filaGestacion = new Object[2];
-            filaGestacion[0] = contacto.nombre;
-            filaGestacion[1] = contacto.telefono;
+		private void btnModificar_Click(object sender, EventArgs e)
+		{
+			estadoObjCliente = Estado.Modificar;
+			estadoComponentes(Estado.Modificar);
+		}
+		#endregion
 
-            dgvContactos.Rows.Add(filaGestacion);
-            
-        }
+		#region ContactosDeEmergencia
+		private void btnAddContacto_Click(object sender, EventArgs e)
+		{
+			Service.contactoEmergencia cont = new Service.contactoEmergencia();
+			cont.nombre = txtNombreEmergencia.Text;
+			cont.telefono = txtTelefonoEmergencia.Text;
+			
+			if (estadoObjCliente == Estado.Nuevo)
+				contactos.Add(cont);
+			else
+			{
+				contactos = new BindingList<Service.contactoEmergencia>();
+				foreach (Service.contactoEmergencia contacto in cliente.contactos)
+					contactos.Add(contacto);
+				contactos.Add(cont);
+			}
+			Object[] filaContacto = new Object[2];
+			filaContacto[0] = cont.nombre;
+			filaContacto[1] = cont.telefono;
+			dgvContactos.Rows.Add(filaContacto);
+		}
 
-        private void btnAgregarGestacion_Click(object sender, EventArgs e)
+		private void btnQuitarContacto_Click(object sender, EventArgs e)
+		{
+			
+			if (estadoObjCliente == Estado.Nuevo)
+			{
+				foreach (DataGridViewRow fila in dgvContactos.SelectedRows)
+				{
+				contactos.RemoveAt(fila.Index);
+				dgvContactos.Rows.RemoveAt(fila.Index);
+				}	
+			}
+			else
+			{
+				contactos = new BindingList<Service.contactoEmergencia>();
+				foreach (Service.contactoEmergencia contacto in cliente.contactos)
+					contactos.Add(contacto);
+				foreach (DataGridViewRow fila in dgvContactos.SelectedRows)
+				{
+				contactos.RemoveAt(fila.Index);
+				dgvContactos.Rows.RemoveAt(fila.Index);
+				}
+			}
+		
+		}
+		#endregion
+
+		#region Apoderado
+		private void btnAgregarBebe_Click(object sender, EventArgs e)
+		{
+			frmGestionarBebe formGestionarBebe = new frmGestionarBebe();
+			if (formGestionarBebe.ShowDialog() == DialogResult.OK)
+			{
+				Service.bebe bebe;
+				bebe = formGestionarBebe.BebeSeleccionado;
+				bebes.Add(bebe);
+				Object[] filaBebe = new Object[4];
+				filaBebe[0] = bebe.dni;
+				filaBebe[1] = bebe.nombre;
+				filaBebe[2] = bebe.relacion;
+				filaBebe[3] = bebe.fechaNaci.ToShortDateString();
+				dgvBebes.Rows.Add(filaBebe);
+			}
+		}
+
+		private void btnSeleccionarBebe_Click(object sender, EventArgs e)
+		{
+			frmBuscarBebe formBuscarBebe = new frmBuscarBebe();
+			formBuscarBebe.Show();
+		}
+		#endregion
+
+		#region Gestante
+		private void btnAgregarGestacion_Click(object sender, EventArgs e)
         {
             frmGestionarGestacion formGestionarGestacion = new frmGestionarGestacion();
             if(formGestionarGestacion.ShowDialog() == DialogResult.OK)
@@ -380,7 +510,6 @@ namespace Bendiciones
                 Object[] filaGestacion = new Object[2];
                 filaGestacion[0] = gestacion.clinica;
                 filaGestacion[1] = gestacion.fecha_probable_parto;
-
                 dgvGestaciones.Rows.Add(filaGestacion);
             }
         }
@@ -397,31 +526,13 @@ namespace Bendiciones
                 
             }
         }
-
-		private void btnModificar_Click(object sender, EventArgs e)
-		{
-            estadoObjCliente = Estado.Modificar;
-            estadoComponentes(Estado.Modificar);
-		}
-
+		
 		private void dgvCondiciones_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
 		{
 			Service.condicionMedica conFila = (Service.condicionMedica)dgvCondiciones.Rows[e.RowIndex].DataBoundItem;
 			if (conFila != null)
 				dgvCondiciones.Rows[e.RowIndex].Cells[0].Value = conFila.nombre;
 		}
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            estadoObjCliente = Estado.Nuevo;
-            dgvCondiciones.DataSource = Program.dbController.listarCondMedicasPorNombre("");
-            estadoComponentes(Estado.Nuevo);
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            estadoComponentes(Estado.Inicial);
-            dgvCondiciones.DataSource = null;
-        }
-    }
+		#endregion
+	}
 }

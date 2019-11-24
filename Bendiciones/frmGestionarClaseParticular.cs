@@ -266,7 +266,6 @@ namespace Bendiciones
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            int idMat;
             int idClase;
             
             //validar los datos antes
