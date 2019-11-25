@@ -374,8 +374,8 @@ namespace Bendiciones
 
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
-			if (verificarCampos())
-			{
+			//if (verificarCampos())
+			//{
 				if (tabTipo.SelectedTab == tabApoderado)
 				{
 					apoderado.nombre = txtNombreCliente.Text;
@@ -467,7 +467,7 @@ namespace Bendiciones
 				}
 				estadoComponentes(Estado.Inicial);
 				limpiarComponentes();
-			}
+			//}
 		}
 
 		private void btnNuevo_Click(object sender, EventArgs e)
@@ -521,25 +521,19 @@ namespace Bendiciones
 
 		private void btnQuitarContacto_Click(object sender, EventArgs e)
 		{
-			
+
 			if (estadoObjCliente == Estado.Nuevo)
 			{
-				foreach (DataGridViewRow fila in dgvContactos.SelectedRows)
-				{
-				contactos.RemoveAt(fila.Index);
-				dgvContactos.Rows.RemoveAt(fila.Index);
-				}	
+				contactos.RemoveAt(dgvContactos.CurrentRow.Index);
+				dgvContactos.Rows.Remove(dgvContactos.CurrentRow);
 			}
 			else
 			{
 				contactos = new BindingList<Service.contactoEmergencia>();
 				foreach (Service.contactoEmergencia contacto in cliente.contactos)
 					contactos.Add(contacto);
-				foreach (DataGridViewRow fila in dgvContactos.SelectedRows)
-				{
-				contactos.RemoveAt(fila.Index);
-				dgvContactos.Rows.RemoveAt(fila.Index);
-				}
+				contactos.RemoveAt(dgvContactos.CurrentRow.Index);
+				dgvContactos.Rows.Remove(dgvContactos.CurrentRow);
 			}
 		
 		}
