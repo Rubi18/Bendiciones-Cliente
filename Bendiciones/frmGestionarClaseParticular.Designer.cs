@@ -67,12 +67,12 @@
             this.txtObservaciones = new System.Windows.Forms.TextBox();
             this.lblObservaciones = new System.Windows.Forms.Label();
             this.lblPrecio = new System.Windows.Forms.Label();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblNombreServicio = new System.Windows.Forms.Label();
             this.txtNombreServicio = new System.Windows.Forms.TextBox();
             this.btnNuevo = new System.Windows.Forms.Button();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.pnlCtn.SuspendLayout();
             this.gbPago.SuspendLayout();
             this.gbDocente.SuspendLayout();
@@ -376,6 +376,7 @@
             // 
             // gbServicio
             // 
+            this.gbServicio.Controls.Add(this.txtPrecio);
             this.gbServicio.Controls.Add(this.cboHoraFin);
             this.gbServicio.Controls.Add(this.lblHoraFin);
             this.gbServicio.Controls.Add(this.lblHoraIni);
@@ -389,7 +390,6 @@
             this.gbServicio.Controls.Add(this.txtObservaciones);
             this.gbServicio.Controls.Add(this.lblObservaciones);
             this.gbServicio.Controls.Add(this.lblPrecio);
-            this.gbServicio.Controls.Add(this.txtPrecio);
             this.gbServicio.Controls.Add(this.txtDescripcion);
             this.gbServicio.Controls.Add(this.lblDescripcion);
             this.gbServicio.Controls.Add(this.lblNombreServicio);
@@ -555,18 +555,6 @@
             this.lblPrecio.TabIndex = 37;
             this.lblPrecio.Text = "Precio:";
             // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Enabled = false;
-            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio.HideSelection = false;
-            this.txtPrecio.Location = new System.Drawing.Point(260, 145);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(144, 26);
-            this.txtPrecio.TabIndex = 38;
-            this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
-            // 
             // txtDescripcion
             // 
             this.txtDescripcion.Enabled = false;
@@ -622,6 +610,18 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.HideSelection = false;
+            this.txtPrecio.Location = new System.Drawing.Point(260, 145);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(168, 26);
+            this.txtPrecio.TabIndex = 51;
+            this.txtPrecio.Text = "0";
+            this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             // 
             // frmGestionarClaseParticular
             // 
@@ -681,7 +681,6 @@
         private System.Windows.Forms.TextBox txtObservaciones;
         private System.Windows.Forms.Label lblObservaciones;
         private System.Windows.Forms.Label lblPrecio;
-        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblNombreServicio;
@@ -696,5 +695,6 @@
         private System.Windows.Forms.Label lblDescuento;
         private System.Windows.Forms.TextBox txtSaldo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPrecio;
     }
 }

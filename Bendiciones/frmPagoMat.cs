@@ -52,7 +52,12 @@ namespace Bendiciones
 
         private void txtAbonar_TextChanged(object sender, EventArgs e)
         {
-            txtPendiente.Text = (float.Parse(txtTotalAPagar.Text) - float.Parse(txtAbonar.Text)).ToString();
+            if(!txtAbonar.Text.Equals(""))
+                txtPendiente.Text = (float.Parse(txtTotalAPagar.Text) - float.Parse(txtAbonar.Text)).ToString();
+            else
+            {
+                txtAbonar.Text = "0";
+            }
         }
     }
 }
